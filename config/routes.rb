@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'user#new', as: 'new_user'
   post '/users', to: 'user#create'
 
+  get 'patients/:id', to: 'patient#show', as: 'patient'
+
 end
