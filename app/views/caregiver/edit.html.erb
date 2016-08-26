@@ -1,0 +1,13 @@
+<h1>This is a caregiver edit form</h1>
+
+
+<%= form_for @caregiver do |f| %>
+  <%= f.text_field :experience %>
+  <%= f.text_field :photo %>
+  <%= f.text_field :location %>
+  <%= f.text_field :credentials %>
+
+  <%= f.submit "Save Caregiver Profile" %>
+
+
+<% end %>
