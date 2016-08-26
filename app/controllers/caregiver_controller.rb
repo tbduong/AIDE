@@ -1,0 +1,2 @@
+class CaregiverController < ApplicationController
+end
