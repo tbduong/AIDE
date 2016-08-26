@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   get 'patients/:id', to: 'patient#show', as: 'patient'
 
+  get 'caregivers/:id', to: 'caregiver#show', as: 'caregiver'
+
+
 end
