@@ -1,0 +1,8 @@
+<h1>Edit Patient Form</h1>
+
+<%= simple_form_for @patient do |f| %>
+<%= f.input :date_of_birth %>
+<%= f.input :photo %>
+<%= f.input :location %>
+<%= f.button :submit %>
+<% end %>

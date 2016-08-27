@@ -1,4 +1,4 @@
-class CaregiverController < ApplicationController
+class CaregiversController < ApplicationController
   def show
     @caregiver = Caregiver.find_by_id(params[:id])
   end
