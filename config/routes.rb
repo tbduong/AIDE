@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/patients/:id/edit', to: 'patients#edit', as: 'edit_patient'
   patch '/patients/:id', to: 'patients#update'
 
+  get '/caregivers', to: 'caregivers#index', as: 'caregivers'
   get '/caregivers/:id', to: 'caregivers#show', as: 'caregiver'
   get '/caregivers/:id/edit', to: 'caregivers#edit', as: 'edit_caregiver'
   patch '/caregivers/:id', to: 'caregivers#update'

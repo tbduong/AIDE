@@ -11,7 +11,10 @@ class PatientsController < ApplicationController
   def update
     patient_params = params.require(:patient).permit(:date_of_birth, :photo, :location)
     @patient = Patient.find_by_id(params[:id])
-    @patient.update(patient_params)
+    if @patient.update(patient_params)
+      redirect_to patient_path(@patient)
+    else
+      redirect_to :back
+    end
   end
-
 end
