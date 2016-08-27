@@ -10,6 +10,10 @@ class CaregiversController < ApplicationController
   def update
     caregiver_params = params.require(:caregiver).permit(:experience, :photo, :location, :credentials)
     @caregiver = Caregiver.find_by_id(params[:id])
-    @caregiver.update(caregiver_params)
+    if @caregiver.update(caregiver_params)
+      redirect_to caregiver_path(@caregiver)
+    else
+      redirect_to :back
+    end
   end
 end

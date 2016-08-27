@@ -10,8 +10,11 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       @current_user = @user
       if @user.patient
-        redirect_to patient_path(@user)
-      else redirect_to caregiver_path(@user)
+        @patient = Patient.find_by_user_id(@user.id)
+        redirect_to patient_path(@patient)
+      else
+        @caregiver = Caregiver.find_by_user_id(@user.id)
+        redirect_to caregiver_path(@caregiver)
       end
     else
       redirect_to '/login'
