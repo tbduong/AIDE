@@ -28,8 +28,15 @@
   </head>
 
   <body>
-
-    <%= yield %>
+    <br>
+    <div class="row">
+    <div class="flash text-center">
+      <% flash.each do |m| %>
+        <%= m %>
+          <% end %>
+    </div>
+  </div>
+  <%= yield %>
 
   </body>
 </html>

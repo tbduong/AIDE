@@ -1,4 +1,4 @@
-<h2 class="text-center"> Welcome back, FirstName! </h2>
+<h2 class="text-center"> Welcome back, <%= @patient.user.first_name %>! </h2>
 
 <div class="row">
   <div class="small-4 columns">
@@ -6,7 +6,7 @@
       <div class="card">
         <img src="http://placekitten.com/g/400/200">
         <div class="card-divider text-center">
-          <h4>FirstName LastName</h4>
+          <h4> <%= @patient.user.first_name %></h4>
         </div>
         <div class="card-section">
           <ul>
