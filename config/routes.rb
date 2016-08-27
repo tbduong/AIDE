@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   patch '/users/:id', to: 'user#update'
   get '/users/:id', to: 'user#show', as: 'user'
 
-  get '/patient/:id', to: 'patient#show', as: 'patient'
-  get '/patient/:id/edit', to: 'patient#edit', as: 'edit_patient'
-  patch '/patient/:id', to: 'patient#update'
+  get '/patients/:id', to: 'patient#show', as: 'patient'
+  get '/patients/:id/edit', to: 'patient#edit', as: 'edit_patient'
+  patch '/patients/:id', to: 'patient#update'
 
-  get '/caregiver/:id', to: 'caregiver#show', as: 'caregiver'
-  get '/caregiver/:id/edit', to: 'caregiver#edit', as: 'edit_caregiver'
-  patch '/caregiver/:id', to: 'caregiver#update'
+  get '/caregivers/:id', to: 'caregiver#show', as: 'caregiver'
+  get '/caregivers/:id/edit', to: 'caregiver#edit', as: 'edit_caregiver'
+  patch '/caregivers/:id', to: 'caregiver#update'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

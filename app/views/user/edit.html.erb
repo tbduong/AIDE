@@ -1,12 +1,8 @@
-<h1>This is a user edit form</h1>
+<h1>Edit User Form</h1>
 
-
-<%= form_for @user do |f| %>
-  <%= f.text_field :first_name %>
-  <%= f.text_field :last_name %>
-  <%= f.text_field :email %>
-  <%= f.text_field :password %>
-  <%= f.submit "Save Profile" %>
-
-
+<%= simple_form_for @user do |f| %>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :email %>
+<%= f.button :submit %>
 <% end %>

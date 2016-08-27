@@ -1,7 +1,8 @@
-<h1>This is a user create form</h1>
-
-
-<%= semantic_form_for @user do |f| %>
-  <%= f.inputs %>
-  <%= f.actions %>
+<%= simple_form_for @user do |f| %>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :email %>
+<%= f.input :password %>
+<%= f.input :patient, as: :boolean %>
+<%= f.button :submit %>
 <% end %>
