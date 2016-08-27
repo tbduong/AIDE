@@ -1,17 +1,17 @@
-<h2 class="text-center"> Welcome back, FirstName! </h2>
+<h2 class="text-center"> Welcome back, <%= @patient.user.first_name %> </h2>
 
 <div class="row">
   <div class="small-4 columns">
     <div class="panel callout radius">
       <div class="card">
-        <img src="http://placekitten.com/g/400/200">
+        <img src="<%= @patient.photo %>">
         <div class="card-divider text-center">
-          <h4>FirstName LastName</h4>
+          <h4><%= @patient.user.first_name %> <%= @patient.user.last_name %></h4>
         </div>
         <div class="card-section">
           <ul>
-            <li> Birthdate: </li>
-            <li> Location: </li>
+            <li> Birthdate: <%= @patient.date_of_birth %></li>
+            <li> Location: <%= @patient.location %></li>
           </ul>
         </div>
       </div>
