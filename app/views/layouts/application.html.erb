@@ -32,10 +32,7 @@
     </div>
     <% end %>
   </div>
-</head>
-<body>
 
-  <br>
   <div class="row">
     <div class="flash-message text-center">
       <% flash.each do |m| %>
@@ -43,6 +40,10 @@
       <% end %>
     </div>
   </div>
+</head>
+<body>
+  <br>
+
   <%= yield %>
 
 </body>
