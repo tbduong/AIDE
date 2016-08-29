@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     if @user.save
       login(@user)
       if @user.patient
-        flash[:success] = "Successfully created a patient account"
         @patient = Patient.create(user_id: @user.id)
+        flash[:success] = "Successfully created a patient account"
         redirect_to patient_path(@patient.id)
       else
         flash[:success] = "Successfully created a caregiver account"
