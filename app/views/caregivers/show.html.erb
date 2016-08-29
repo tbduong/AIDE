@@ -26,6 +26,7 @@
                     </ul>
                 </div>
                 <a href="<%= edit_caregiver_path %>" class="button expanded">Edit Profile</a>
+                  <%= button_to "Edit User Information", edit_user_path(@caregiver.user_id), :method => :get, class: "button" %>
             </div>
         </div>
     </div>

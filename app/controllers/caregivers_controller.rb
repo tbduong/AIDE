@@ -1,6 +1,15 @@
 class CaregiversController < ApplicationController
   def show
     @caregiver = Caregiver.find_by_id(params[:id])
+
+    if current_user.patient
+      render :show
+    else
+      if session[:user_id] != @caregiver[:user_id]
+        flash[:error] = "You are NOT authorized to view this profile."
+        redirect_to '/'
+      end
+    end
   end
   
   def index
