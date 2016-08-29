@@ -9,11 +9,11 @@ module SessionsHelper
     @current_user ||= User.find_by_id(session[:user_id])
   end
 
-  # def logged_in?
-  #   if current_user == nil
-  #     redirect_to ('/')
-  #   end
-  # end
+  def logged_in?
+    if current_user == nil
+      redirect_to ('/')
+    end
+  end
 
   def patient
    Patient.find_by_user_id(current_user.id)
