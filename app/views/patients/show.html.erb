@@ -15,6 +15,8 @@
           </ul>
         </div>
         <%= button_to "Edit Profile Information", edit_patient_path, :method => :get, class: "button" %>
+        <%= button_to "Edit User Information", edit_user_path(@patient.user_id), :method => :get, class: "button" %>
+
       </div>
     </div>
   </div>
