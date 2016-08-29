@@ -11,6 +11,11 @@ class CaregiversController < ApplicationController
       end
     end
   end
+  
+  def index
+    @caregivers = Caregiver.all
+    render :index
+  end
 
   def edit
     @caregiver = Caregiver.find_by_id(params[:id])

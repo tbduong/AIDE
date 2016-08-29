@@ -1,60 +1,73 @@
-<h2 class="text-center"> Welcome back, <%= @caregiver.user.first_name %> </h2><div class="row">
-  <div class="large-4 small-2 columns">
-    <div class="panel callout radius">
-      <div class="card">
-        <img src="http://placekitten.com/g/400/200">
-        <div class="card-divider text-center">
-          <h4>Switten</h4>
+<h2 class="text-center">
+    <%= @caregiver.user.first_name %>'s Profile
+</h2>
+<div class="row">
+    <div class="large-4 small-2 columns">
+        <div class="panel callout radius">
+            <div class="card">
+                <img src="<%= caregiver.photo %>">
+                <div class="card-divider text-center">
+                    <h4><%= @caregiver.user.first_name %> <%= @caregiver.user.last_name %></h4>
+                </div>
+                <div class="card-section">
+                    <ul>
+                        <ul>
+                            <strong>
+                                Email:
+                            </strong>
+                            <%= @caregiver.user.email %>
+                        </ul>
+                        <ul>
+                            <strong>
+                                Location:
+                            </strong>
+                            <%= @caregiver.location %>
+                        </ul>
+                    </ul>
+                </div>
+                <a href="<%= edit_caregiver_path %>" class="button expanded">Edit Profile</a>
+                  <%= button_to "Edit User Information", edit_user_path(@caregiver.user_id), :method => :get, class: "button" %>
+            </div>
         </div>
-        <div class="card-section">
-          <ul>
-            <li> Switty </li>
-            <li> Cat </li>
-            <li> location </li>
-          </ul>
-        </div>
-        <%= button_to "Edit Profile Information", edit_caregiver_path, :method => :get, class: "button" %>
-        <%= button_to "Edit User Information", edit_user_path(@caregiver.user_id), :method => :get, class: "button" %>
+    </div>
 
-      </div>
-    </div>
-  </div>
+    <div class="small-8 columns">
+        <div class="panel callout radius">
+            SHORT BIO:
+            <hr>
+            <%= caregiver.experience %>
+        </div>
+        <div class="panel callout radius">
+          CREDENTIALS:
+          <hr>
+          <%= caregiver.credentials %>
+        </div>
+        <div class="panel callout radius">
+            SPECIALTIES:
+            <hr>
+            <div class="row">
+                <div class="small-4 columns">
+                    SPECIALTY GOES HERE
+                </div>
+                <div class="small-4 columns">
+                    SPECIALTY GOES HERE
+                </div>
+                <div class="small-4 columns">
+                    SPECIALTY GOES HERE
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-4 columns">
+                    SPECIALTY GOES HERE
+                </div>
+                <div class="small-4 columns">
+                    SPECIALTY GOES HERE
+                </div>
+                <div class="small-4 columns">
+                    SPECIALTY GOES HERE
+                </div>
+            </div>
 
-  <div class="small-8 columns">
-    <div class="panel callout radius">
-    SHORT BIO:
-    <hr>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <a href="#" class="button expanded">Contact Me</a>
     </div>
-    <div class="panel callout radius">
-      SPECIALTIES:
-      <hr>
-      <div class="row">
-        <div class="small-4 columns">
-          SPECIALTY GOES HERE
-        </div>
-        <div class="small-4 columns">
-          SPECIALTY GOES HERE
-        </div>
-        <div class="small-4 columns">
-          SPECIALTY GOES HERE
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-4 columns">
-          SPECIALTY GOES HERE
-        </div>
-        <div class="small-4 columns">
-          SPECIALTY GOES HERE
-        </div>
-        <div class="small-4 columns">
-          SPECIALTY GOES HERE
-        </div>
-      </div>
-
-    </div>
-    <div class="panel callout radius">
-    CREDENTIALS:
-    <hr> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-    <a href="#" class="button expanded">Contact Me</a>
-  </div>
