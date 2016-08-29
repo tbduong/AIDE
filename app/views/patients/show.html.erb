@@ -14,7 +14,7 @@
             <li> Location: <%= @patient.location %></li>
           </ul>
         </div>
-        <%= button_to "Edit Profile Information", edit_patient_path, :method => :get, class: "button" %>
+        <%= button_to "Edit Profile Information", edit_patient_path, :method => :get, class: "button expanded" %>
       </div>
     </div>
   </div>
@@ -29,8 +29,7 @@
         <div>
         </div>
       </div>
-      <a href="#"class="button expanded"> Find a Caregiver </a>
-
+      <%= button_to "Find A Caregiver", caregivers_path, :method => :get, class: "button expanded" %>
 
     </div>
 
