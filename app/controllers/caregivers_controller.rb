@@ -5,7 +5,7 @@ class CaregiversController < ApplicationController
 
   def edit
     @caregiver = Caregiver.find_by_id(params[:id])
-    if session[:user_id] != @caregiver[:id]
+    if session[:user_id] != @caregiver[:user_id]
       flash[:error] = "You are NOT authorized to edit this profile."
       redirect_to '/'
     end
