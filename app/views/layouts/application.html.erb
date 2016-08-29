@@ -23,7 +23,11 @@
     <div class="top-bar-right">
       <ul class="menu">
         <% if current_user %>
-        <li> <%= link_to "Profile", user_path(current_user) %> </li>
+          <% if current_user.patient %>
+            <li> <%= link_to "Profile", patient_path(patient.id) %> </li>
+          <% else %>
+            <li> <%= link_to "Profile", caregiver_path(caregiver.id) %> </li>
+            <% end %>
         <li> <%= link_to "Logout", logout_path %> </li>
         <% else %>
         <li> <%= link_to "Login", login_path %> </li>

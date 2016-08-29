@@ -1,5 +1,10 @@
 module SessionsHelper
-  
+
+  def login(user)
+    session[:user_id] = user.id
+    @current_user = user
+  end
+
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
   end
@@ -9,6 +14,14 @@ module SessionsHelper
   #     redirect_to ('/')
   #   end
   # end
+
+  def patient
+   Patient.find_by_user_id(current_user.id)
+  end
+
+  def caregiver
+   Caregiver.find_by_user_id(current_user.id)
+  end
 
   def logout
     @current_user = session[:user_id] = nil

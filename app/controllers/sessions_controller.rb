@@ -6,9 +6,8 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.confirm(user_params)
-    if @user
-      session[:user_id] = @user.id
-      @current_user = @user
+    if @user.save
+      login(@user)
       if @user.patient
         @patient = Patient.find_by_user_id(@user.id)
         flash[:notice] = "Successfully logged in!"
