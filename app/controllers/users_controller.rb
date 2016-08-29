@@ -16,12 +16,17 @@ class UsersController < ApplicationController
     if @user.save
       login(@user)
       if @user.patient
+        flash[:success] = "Successfully created a patient account"
         @patient = Patient.create(user_id: @user.id)
         redirect_to patient_path(@patient.id)
       else
+        flash[:success] = "Successfully created a caregiver account"
         @caregiver = Caregiver.create(user_id: @user.id)
         redirect_to caregiver_path(@caregiver.id)
       end
+    else
+        flash[:error] = @user.errors.full_messages.join(", ")
+        redirect_to new_user_path
     end
   end
 

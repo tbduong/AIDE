@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.confirm(user_params)
-    if @user.save
+    if @user
       login(@user)
       if @user.patient
         @patient = Patient.find_by_user_id(@user.id)
@@ -18,7 +18,8 @@ class SessionsController < ApplicationController
         redirect_to caregiver_path(@caregiver)
       end
     else
-      redirect_to '/login'
+      flash[:error] = "Incorrect email or password. Please try again"
+      redirect_to login_path
     end
   end
 
