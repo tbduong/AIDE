@@ -1,19 +1,20 @@
-<h2 class="text-center"> Welcome back, FirstName! </h2>
+<h2 class="text-center"> Welcome back, <%= @patient.user.first_name %> </h2>
 
 <div class="row">
   <div class="small-4 columns">
     <div class="panel callout radius">
       <div class="card">
-        <img src="http://placekitten.com/g/400/200">
+        <img src="<%= @patient.photo %>">
         <div class="card-divider text-center">
-          <h4>FirstName LastName</h4>
+          <h4><%= @patient.user.first_name %> <%= @patient.user.last_name %></h4>
         </div>
         <div class="card-section">
           <ul>
-            <li> Birthdate: </li>
-            <li> Location: </li>
+            <li> Birthdate: <%= @patient.date_of_birth %></li>
+            <li> Location: <%= @patient.location %></li>
           </ul>
         </div>
+        <%= button_to "Edit Profile Information", edit_patient_path, :method => :get, class: "button" %>
       </div>
     </div>
   </div>
@@ -23,7 +24,7 @@
       <div class="panel callout radius">
         <h4> Short Bio </h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <%= @patient.bio %>
         </p>
         <div>
         </div>
