@@ -14,6 +14,7 @@
             <li> Location: <%= @patient.location %></li>
           </ul>
         </div>
+        <%= button_to "Edit Profile Information", edit_patient_path, :method => :get, class: "button" %>
       </div>
     </div>
   </div>

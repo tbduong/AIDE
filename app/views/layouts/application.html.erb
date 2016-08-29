@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track', 'vendor/modernizr' => true %>
-    <%= csrf_meta_tags %>
-    <div class="top-bar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track', 'vendor/modernizr' => true %>
+  <%= csrf_meta_tags %>
+
+  <div class="top-bar">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">[ A I D E ]</li>
-        <li>
-          <a href="#">💙 About Us </a>
-        </li>
-        <li> <%= link_to "Caregivers Directory", caregivers_path %> </li>
+        <li class="menu-text"> <%= link_to "[ A I D E ]", root_path %></li>
+        <li><a href="#">💙 About Us </a></li>
         <li><a href="#">Resources</a></li>
+        <% if current_user %>
+        <li> <%= link_to "Caregivers Directory", caregivers_path %> </li>
+        <% end %>
       </ul>
     </div>
+
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a href="<%= login_path %>">Login</a></li>
-        <li><a href="<%= logout_path %>">Logout</a></li>
-        <li><a href="<%= new_user_path %>">Sign Up</a></li>
+        <% if current_user %>
+          <% if current_user.patient %>
+            <li> <%= link_to "Profile", patient_path(patient.id) %> </li>
+          <% else %>
+            <li> <%= link_to "Profile", caregiver_path(caregiver.id) %> </li>
+            <% end %>
+        <li> <%= link_to "Logout", logout_path %> </li>
+        <% else %>
+        <li> <%= link_to "Login", login_path %> </li>
+        <li> <%= link_to "Sign Up", new_user_path %> </li>
       </ul>
     </div>
+    <% end %>
   </div>
-  </head>
+<br>
+  <div class="row">
+    <div class="flash-message text-center">
+      <% flash.each do |type, m| %>
+      <%= m %>
+      <% end %>
+    </div>
+  </div>
+</head>
+<body>
+  <br>
 
-  <body>
+  <%= yield %>
 
-    <%= yield %>
-
-  </body>
+</body>
 </html>
