@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   get '/resources', to: 'welcome#resources', as: 'resources'
+  get '/about', to: 'welcome#about', as: 'about'
 
 end
