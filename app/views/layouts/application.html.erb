@@ -13,21 +13,12 @@
   <div class="contain-to-grid">
     <nav class="top-bar" aria-hidden="true" data-topbar role="navigation">
     <div class="top-bar-left">
-<<<<<<< HEAD
-      <ul class="menu" data-dropdown-menu>
-        <li class="menu-text"> <%= link_to "[ A I D E ]", root_path, title:'AIDE logo' %></li>
-        <li class="menu-text"> <%= link_to "About Us", about_path, title:'About Us' %> </li>
-        <li class="menu-text"><%= link_to "Resources", resources_path, title:'Resources' %></li>
-        <% if current_user %>
-        <li class="menu-text"> <%= link_to "Caregivers Directory", caregivers_path, title:'Caregivers Directory' %> </li>
-=======
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text"> <%= link_to "[ A I D E ]", root_path, :class => "navtext" %></li>
         <li> <%= link_to "About Us", about_path, :class => "navtext" %> </li>
         <li><%= link_to "Resources", resources_path, :class => "navtext" %></li>
         <% if current_user %>
         <li> <%= link_to "Caregivers Directory", caregivers_path, :class => "navtext" %> </li>
->>>>>>> development
         <% end %>
       </ul>
     </div>
