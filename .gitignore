@@ -18,3 +18,4 @@
 
 # Ignore uploadcare.yml
 /config/uploadcare.yml
+super_secret.yml
