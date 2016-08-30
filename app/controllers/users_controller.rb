@@ -36,8 +36,13 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
-    @user.update(user_params)
-    redirect_to "/"
+    if @user.update(user_params)
+      flash[:notice] = "Successfully saved changes to User information."
+      redirect_to '/'
+    else
+      flash[:error] = "Could not save changes to User information. Please try again."
+      redirect_to :back
+    end
   end
 
   private
