@@ -35,12 +35,12 @@
         <div class="panel callout radius">
             SHORT BIO:
             <hr>
-            <%= caregiver.experience %>
+            <%= @caregiver.experience %>
         </div>
         <div class="panel callout radius">
           CREDENTIALS:
           <hr>
-          <%= caregiver.credentials %>
+          <%= @caregiver.credentials %>
         </div>
         <div class="panel callout radius">
             SPECIALTY:
@@ -61,5 +61,5 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="button expanded">Contact Me</a>
+        <%= link_to 'Send email', send_email_path, class: 'button' %>
     </div>
