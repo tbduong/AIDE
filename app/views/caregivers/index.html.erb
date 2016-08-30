@@ -5,23 +5,23 @@
     <div class="panel callout radius filter">
     <label><strong><h3 class="text-center">Filter</h3></strong></label>
       <p class="text-center">
-        Check your specific care needs.
+        Search your specific care needs.
       </p>
-    <input id="checkbox1" type="checkbox"><label for="checkbox1">Alzheimer's & Dementia</label>
-    <input id="checkbox1" type="checkbox"><label for="checkbox1">Orthopedic</label>
-    <input id="checkbox2" type="checkbox"><label for="checkbox2">Wound Care</label>
-    <input id="checkbox1" type="checkbox"><label for="checkbox1">Oncology Care</label>
-    <br>
-    <input id="checkbox2" type="checkbox"><label for="checkbox2">Geriatric Care</label>
-    <input id="checkbox2" type="checkbox"><label for="checkbox2">Pediatric Care</label>
-    <input id="checkbox1" type="checkbox"><label for="checkbox1">Post Surgical</label>
-    <input id="checkbox2" type="checkbox"><label for="checkbox2">Neurological Care</label>
+      <div class="text-center">
+
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :specialty_or_experience_or_location_or_credentials_cont  %>
+        <%= f.submit class: "button expanded" %>
+      <% end %>
+
+    </div>
+
     </div>
   </div>
 </div>
-<div class="large-2 columns filter-button">
-  <a href="#" class="button expanded large">Search</a>
-</div>
+
+
+
 
 <% @caregivers.each do |caregiver| %>
 <div class="row">
