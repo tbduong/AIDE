@@ -42,18 +42,13 @@
           <hr>
           <%= caregiver.credentials %>
         </div>
+        <% @caregiver.specialty.each do |c| %>
         <div class="panel callout radius">
-            SPECIALTIES:
+            SPECIALTY:
             <hr>
             <div class="row">
                 <div class="small-4 columns">
-                    SPECIALTY GOES HERE
-                </div>
-                <div class="small-4 columns">
-                    SPECIALTY GOES HERE
-                </div>
-                <div class="small-4 columns">
-                    SPECIALTY GOES HERE
+                    <%= c.specialty %>
                 </div>
             </div>
             <div class="row">
@@ -67,7 +62,7 @@
                     SPECIALTY GOES HERE
                 </div>
             </div>
-
         </div>
+        <% end %>
         <a href="#" class="button expanded">Contact Me</a>
     </div>
