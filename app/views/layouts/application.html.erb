@@ -21,7 +21,6 @@
         <% end %>
       </ul>
     </div>
-
     <div class="top-bar-right">
       <ul class="menu">
         <% if current_user %>
@@ -35,8 +34,8 @@
         <li class="menu-text"> <%= link_to "Login", login_path , title: 'Login Button'%> </li>
         <li class="menu-text"> <%= link_to "Sign Up", new_user_path, title: 'Sign Up Button' %> </li>
       </ul>
+      <% end %>
     </div>
-    <% end %>
   </div>
 <br>
   <div class="row">
@@ -47,6 +46,7 @@
     </div>
   </div>
 </head>
+
 <body>
   <br>
 
