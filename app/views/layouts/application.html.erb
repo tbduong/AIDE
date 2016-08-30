@@ -35,20 +35,6 @@
       <ul class="menu">
         <% if current_user %>
           <% if current_user.patient %>
-<<<<<<< HEAD
-            <li class="menu-text"> <%= link_to "Profile", patient_path(patient.id), title:'User Profile Page' %> </li>
-          <% else %>
-            <li class="menu-text"> <%= link_to "Profile", caregiver_path(caregiver.id), title:'User Profile Page' %> </li>
-            <% end %>
-        <li class="menu-text"> <%= link_to "Logout", logout_path, title:'Logout Button' %> </li>
-        <% else %>
-        <li class="menu-text"> <%= link_to "Login", login_path , title: 'Login Button'%> </li>
-        <li class="menu-text"> <%= link_to "Sign Up", new_user_path, title: 'Sign Up Button' %> </li>
-      </ul>
-      <% end %>
-    </div>
-  </div>
-=======
             <li> <%= link_to "Profile", patient_path(patient.id), :class => "navtext" %> </li>
           <% else %>
             <li> <%= link_to "Profile", caregiver_path(caregiver.id), :class => "navtext" %> </li>
@@ -63,7 +49,6 @@
   </nav>
 </div>
 
->>>>>>> development
 <br>
   <div class="row">
     <div class="flash-message text-center">
