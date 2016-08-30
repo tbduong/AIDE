@@ -34,4 +34,10 @@ class CaregiversController < ApplicationController
       redirect_to :back
     end
   end
+
+  def send_email
+    caregiver = Caregiver.find_by_id(params[:id])
+    UserMailer.caregiver_email(caregiver, current_user).deliver
+    redirect_to '/'
+  end
 end
