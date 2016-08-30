@@ -2,8 +2,8 @@
 
 <%= simple_form_for @patient do |f| %>
 <%= f.input :date_of_birth %>
-<%= f.input :photo %>
 <%= f.input :location %>
 <%= f.input :bio %>
+<%= f.uploadcare_field :file %>
 <%= f.button :submit %>
 <% end %>
