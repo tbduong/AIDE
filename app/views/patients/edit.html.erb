@@ -5,10 +5,14 @@
 <div class="large-7 large-center columns">
 <%= simple_form_for @patient do |f| %>
 <%= f.input :date_of_birth %>
-<%= f.input :photo %>
 <%= f.input :location %>
 <%= f.input :bio %>
+<<<<<<< HEAD
 <%= f.submit "Save Changes", :class => 'waves-effect waves-light button edit-patient-save'%>
+=======
+<%= f.uploadcare_field :file %>
+<%= f.button :submit %>
+>>>>>>> c20b81dce6307919c939c1aa7ada63fe1d54a63c
 <% end %>
 
 </div>

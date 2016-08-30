@@ -7,13 +7,20 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track', 'vendor/modernizr' => true %>
   <%= csrf_meta_tags %>
+  <%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
+  <%= uploadcare_settings %>
 
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text"> <%= link_to "[ A I D E ]", root_path %></li>
+<<<<<<< HEAD
         <li> <%= link_to "About Us", about_path %> </li>
         <li><%= link_to "Resources", resources_path %></li>
+=======
+        <li><a href="#">💙 About Us </a></li>
+        <li><a href="#">Resources</a></li>
+>>>>>>> c20b81dce6307919c939c1aa7ada63fe1d54a63c
         <% if current_user %>
         <li> <%= link_to "Caregivers Directory", caregivers_path %> </li>
         <% end %>
