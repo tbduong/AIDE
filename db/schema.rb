@@ -17,24 +17,24 @@ ActiveRecord::Schema.define(version: 20160830162200) do
 
   create_table "caregivers", force: :cascade do |t|
     t.text     "experience"
-    t.string   "photo"
     t.string   "location"
     t.string   "credentials"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.text     "file"
     t.string   "specialty"
     t.index ["user_id"], name: "index_caregivers_on_user_id", using: :btree
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string   "photo"
     t.string   "location"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.text     "bio"
     t.date     "date_of_birth"
+    t.text     "file"
     t.index ["user_id"], name: "index_patients_on_user_id", using: :btree
   end
 

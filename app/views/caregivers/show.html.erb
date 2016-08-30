@@ -5,7 +5,7 @@
     <div class="large-4 small-2 columns">
         <div class="panel callout radius">
             <div class="card">
-                <img src="<%= caregiver.photo %>">
+              <%= image_tag(@caregiver.file) %>
                 <div class="card-divider text-center">
                     <h4><%= @caregiver.user.first_name %> <%= @caregiver.user.last_name %></h4>
                 </div>
