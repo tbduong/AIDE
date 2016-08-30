@@ -1,22 +1,16 @@
-<h2 class="text-center">
+<h1 class="text-center">
     <%= @caregiver.user.first_name %>'s Profile
-</h2>
+</h1>
 <div class="row">
-    <div class="large-4 small-2 columns">
+    <div class="large-4 small-12 columns">
         <div class="panel callout radius">
             <div class="card">
               <%= image_tag(@caregiver.file) %>
                 <div class="card-divider text-center">
-                    <h4><%= @caregiver.user.first_name %> <%= @caregiver.user.last_name %></h4>
+                    <h2><%= @caregiver.user.first_name %> <%= @caregiver.user.last_name %></h2>
                 </div>
                 <div class="card-section">
                     <ul>
-                        <ul>
-                            <strong>
-                                Email:
-                            </strong>
-                            <%= @caregiver.user.email %>
-                        </ul>
                         <ul>
                             <strong>
                                 Location:
@@ -26,12 +20,12 @@
                     </ul>
                 </div>
                 <a href="<%= edit_caregiver_path %>" class="button expanded">Edit Profile</a>
-                  <%= button_to "Edit User Information", edit_user_path(@caregiver.user_id), :method => :get, class: "button" %>
+                <a href="<%= edit_user_path(@caregiver.user_id) %>" class="button expanded">Edit User Information</a>
             </div>
         </div>
     </div>
 
-    <div class="small-8 columns">
+    <div class="large-8 small-12 columns">
         <div class="panel callout radius">
             SHORT BIO:
             <hr>
@@ -69,5 +63,7 @@
             </div>
 
         </div>
-        <%= link_to 'Send email', send_email_path, class: 'button' %>
+        <div class="large-12 large-centered columns">
+          <%= link_to 'Send email', send_email_path, class: 'button expanded' %>
+        </div>
     </div>
