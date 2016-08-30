@@ -11,7 +11,7 @@ class CaregiversController < ApplicationController
       end
     end
   end
-  
+
   def index
     @caregivers = Caregiver.all
     render :index
@@ -33,5 +33,11 @@ class CaregiversController < ApplicationController
     else
       redirect_to :back
     end
+  end
+
+  def send_email
+    caregiver = Caregiver.find_by_id(3)
+    UserMailer.caregiver_email(caregiver, current_user).deliver
+    redirect_to '/'
   end
 end

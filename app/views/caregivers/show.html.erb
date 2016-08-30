@@ -5,7 +5,7 @@
     <div class="large-4 small-2 columns">
         <div class="panel callout radius">
             <div class="card">
-                <img src="<%= caregiver.photo %>">
+                <img src="<%= @caregiver.photo %>">
                 <div class="card-divider text-center">
                     <h4><%= @caregiver.user.first_name %> <%= @caregiver.user.last_name %></h4>
                 </div>
@@ -35,12 +35,12 @@
         <div class="panel callout radius">
             SHORT BIO:
             <hr>
-            <%= caregiver.experience %>
+            <%= @caregiver.experience %>
         </div>
         <div class="panel callout radius">
           CREDENTIALS:
           <hr>
-          <%= caregiver.credentials %>
+          <%= @caregiver.credentials %>
         </div>
         <div class="panel callout radius">
             SPECIALTIES:
@@ -69,5 +69,5 @@
             </div>
 
         </div>
-        <a href="#" class="button expanded">Contact Me</a>
+        <%= link_to 'Send email', send_email_path %>
     </div>
