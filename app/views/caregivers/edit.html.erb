@@ -1,18 +1,19 @@
 
 <div style="height:100px; width:100%; clear:both;"></div>
-<h1 class="text-center">Edit Caregiver Form</h1>
-<div class="row">
-  <div class="small-12 large-12 large-center columns">
-    <a name="nav-skip" id="nav-skip"></a>
-    <%= simple_form_for @caregiver do |f| %>
-    <%= f.input :experience %>
-    <%= f.input :location %>
-    <%= f.input :credentials %>
-    <label for=":file">Upload your profile image:</label>
-    <%= f.uploadcare_field :file %>
-    <br>
-    <br>
-    <div class="small-9 large-7 large-center columns"><%= f.button :submit %></div>
-    <% end %>
-  </div>
-</div>
+  <h1 class="text-center">Edit Caregiver Form</h1>
+    <div class="row">
+        <div class="small-12 large-12 large-center columns">
+          <a name="nav-skip" id="nav-skip"></a>
+          <%= simple_form_for @caregiver do |f| %>
+          <%= f.input :experience %>
+          <%= f.input :location %>
+          <%= f.input :credentials %>
+          <%= f.input :specialties %>
+          <label for=":file">Upload your profile image:</label>
+          <%= f.uploadcare_field :file %>
+          <br>
+          <br>
+          <div class="small-9 large-7 large-center columns"><%= f.button :submit %></div>
+          <% end %>
+        </div>
+      </div>
