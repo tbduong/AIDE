@@ -1,3 +1,4 @@
+
 <div style="height:15%; width:100%; clear:both;"></div>
 <h2 class="text-center"> Welcome back, <%= @patient.user.first_name %> </h2>
 
@@ -17,22 +18,23 @@
             <li> Location: <%= @patient.location %></li>
           </ul>
         </div>
-        <%= button_to "Edit Profile Information", edit_patient_path, :method => :get, class: "button expanded" %>
-        <%= button_to "Edit User Information", edit_user_path(@patient.user_id), :method => :get, class: "button expanded" %>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="large-7 columns">
-      <div class="panel callout radius">
-        <h4> Short Bio </h4>
-        <p>
-          <%= @patient.bio %>
-        </p>
-        <div>
+    <div class="row">
+      <div class="large-7 columns">
+        <div class="panel callout radius" role="Patient Bio">
+          <p class='patient-bio'> Short Bio </p>
+          <p>
+            <%= @patient.bio %>
+          </p>
+          <div>
+          </div>
         </div>
+        <%= button_to "Find A Caregiver", caregivers_path, :method => :get, class: "button expanded" %>
+
       </div>
+
       <%= button_to "Find a Caregiver", caregivers_path, :method => :get, class: "button expanded" %>
     </div>
   </div>
