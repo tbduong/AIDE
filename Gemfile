@@ -33,7 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'ransack'
 
-
+gem 'uploadcare-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
