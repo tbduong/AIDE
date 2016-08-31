@@ -33,6 +33,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by_id(params[:id])
+    if session[:user_id] != @user[:id]
+      flash[:error] = "You are NOT authorized to edit this profile."
+      redirect_to '/'
+    end
   end
 
   def update

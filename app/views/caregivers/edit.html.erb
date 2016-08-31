@@ -8,13 +8,18 @@
 
     <h1>Edit Caregiver Form</h1>
 
-    <%= simple_form_for @caregiver do |f| %>
-    <a name="nav-skip" id="nav-skip"></a>
-    <%= f.input :experience %>
-    <%= f.input :location %>
-    <%= f.input :credentials %>
-    <%= f.uploadcare_field :file %>
-    <%= f.button :submit %>
-    <% end %>
+    <div class="edit-form" role="edit-form">
+      
+      <%= simple_form_for @caregiver do |f| %>
+      <a name="nav-skip" id="nav-skip"></a>
+      <%= f.input :experience %>
+      <%= f.input :location %>
+      <%= f.input :credentials %>
+      <%= f.uploadcare_field :file %>
+      <%= f.button :submit %>
+      <% end %>
+
+    </div>
+
   </body>
 </html>

@@ -10,7 +10,8 @@
 <script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>  <script>
       UPLOADCARE_PUBLIC_KEY = '9094615a416370e932a6';
   </script>
-
+</head>
+<body>
   <div class="contain-to-grid">
     <nav class="top-bar" aria-hidden="true" data-topbar role="navigation">
     <div class="top-bar-left">
@@ -50,29 +51,9 @@
       <% end %>
     </div>
   </div>
-</head>
-
-<body>
   <br>
 
   <%= yield %>
-
-  <div class="row">
-    <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
-      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
-      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
-      <% if current_user %>
-      <% if current_user.patient %>
-      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
-      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
-      <li role="menuitem"> <%= link_to "Caregivers Directory", caregivers_path%> </li>
-      <% else %>
-      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
-      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
-      <% end %>
-      <% end %>
-    </nav>
-  </div>
 
 </body>
 </html>

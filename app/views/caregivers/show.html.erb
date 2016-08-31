@@ -17,7 +17,7 @@
             <div class="card-divider text-center">
               <h2><%= @caregiver.user.first_name %> <%= @caregiver.user.last_name %></h2>
             </div>
-            <div class="card-section">
+            <div class="card-section" role="location">
               <ul>
                 <ul>
                   <strong>
@@ -34,17 +34,17 @@
       </div>
 
       <div class="large-8 small-12 columns">
-        <div class="panel callout radius">
+        <div class="panel callout radius" role="Experience">
           Caregiver Experience
           <hr>
           <p><%= @caregiver.experience %></p>
         </div>
-        <div class="panel callout radius">
+        <div class="panel callout radius" role="Credentials">
           CREDENTIALS:
           <hr>
           <p><%= @caregiver.credentials %>   </p>
         </div>
-        <div class="panel callout radius">
+        <div class="panel callout radius" role="Specialty">
           SPECIALTY:
           <hr>
           <div class="row">
@@ -63,8 +63,10 @@
             </div>
           </div>
         </div>
-        <div class="large-12 large-centered columns">
+        <div class="large-12 large-centered columns" role="send email to caregiver">
+          <% if current_user.patient %>
           <%= link_to 'Send email', send_email_path, class: 'button expanded' %>
+          <% end %>
         </div>
       </div>
 
