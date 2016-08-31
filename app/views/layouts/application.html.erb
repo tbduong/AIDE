@@ -7,9 +7,9 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track', 'vendor/modernizr' => true %>
   <%= csrf_meta_tags %>
-  <%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
-  <%= uploadcare_settings %>
-
+<script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>  <script>
+      UPLOADCARE_PUBLIC_KEY = '9094615a416370e932a6';
+  </script>
   <div class="contain-to-grid">
     <nav class="top-bar" aria-hidden="true" data-topbar role="navigation">
     <div class="top-bar-left">
