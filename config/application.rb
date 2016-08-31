@@ -23,3 +23,5 @@ module AIDE
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+ENV.update YAML.load(File.read(File.expand_path('../super_secret.yml', __FILE__)))

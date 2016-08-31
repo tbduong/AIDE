@@ -1,11 +1,11 @@
+<div style="height:15%; width:100%; clear:both;"></div>
 <h1 title="Update User Information" class="text-center">Update User Information</h1>
 <p title="edit user info"class="text-center">To edit your User information, please update the form below. Press "Save Changes" to complete the update.</p>
 <div class="large-7 large-centered columns">
-
   <%= simple_form_for @user do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :email %>
-  <div class="small-9 large-8 large-center columns"><%= f.submit "Save Changes", :class => 'waves-effect waves-light button edit-user-save'%></div>
+  <div class="small-9 large-8 large-center columns"><%= f.submit "Save Changes", class: "waves-effect waves-light button edit-user-save" %></div>
   <% end %>
 </div>
