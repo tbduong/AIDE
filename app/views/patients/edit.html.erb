@@ -4,7 +4,7 @@
 </p>
 <div class="large-7 large-centered columns">
 <%= simple_form_for @patient do |f| %>
-<%= f.input :date_of_birth %>
+<%= f.input :date_of_birth, start_year: Date.today.year - 110, end_year: Date.today.year %>
 <%= f.input :location %>
 <%= f.input :bio %>
 <label for=":file">Upload your profile image:</label>
