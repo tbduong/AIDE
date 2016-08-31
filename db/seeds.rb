@@ -13,6 +13,10 @@ User.destroy_all
 
 Caregiver.destroy_all
 
+Specialty.destroy_all
+
+CaregiverSpecialty.destroy_all
+
 users_list = [
   {
     first_name: "Bob",
@@ -58,6 +62,70 @@ caregivers_list = [
   }
 ]
 
+specialties_list = [
+  {
+    skill: "Alzheimer's & Dementia"
+  },
+  {
+    skill: "Orthopedic"
+  },
+  {
+    skill: "Wound Care"
+  },
+  {
+    skill: "Oncology Care"
+  },
+  {
+    skill: "Geriatric Care"
+  },
+  {
+    skill: "Pediatric Care"
+  },
+  {
+    skill: "Post Surgical"
+  },
+  {
+    skill: "Neurological Care"
+  }
+]
+
+caregiver_specialties_list = [
+  {
+    specialty_id: 1,
+    caregiver_id: 1
+  },
+  {
+    specialty_id: 2,
+    caregiver_id: 2
+  },
+  {
+    specialty_id: 3,
+    caregiver_id: 3
+  },
+  {
+    specialty_id: 4,
+    caregiver_id: 1
+  },
+  {
+    specialty_id: 5,
+    caregiver_id: 2
+  },
+  {
+    specialty_id: 6,
+    caregiver_id: 3
+  },
+  {
+    specialty_id: 7,
+    caregiver_id: 1
+  },
+  {
+    specialty_id: 8,
+    caregiver_id: 2
+  },
+]
+
 
 User.create(users_list)
 Caregiver.create(caregivers_list)
+Specialty.create(specialties_list)
+CaregiverSpecialty.create(caregiver_specialties_list)
