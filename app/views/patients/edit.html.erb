@@ -2,13 +2,15 @@
 <p class="text-center">
   To edit your Patient information, please update the form below. Press "Save Changes" to complete the update.
 </p>
-<div class="large-7 large-center columns">
+<div class="large-7 large-centered columns">
 <%= simple_form_for @patient do |f| %>
 <%= f.input :date_of_birth %>
 <%= f.input :location %>
 <%= f.input :bio %>
-<%= f.submit "Save Changes", :class => 'waves-effect waves-light button edit-patient-save'%>
+<label for=":file">Upload your profile image:</label>
 <%= f.uploadcare_field :file %>
+<br>
+<br>
+<div class="small-9 large-8 large-center columns"><%= f.submit "Save Changes", :class => 'waves-effect waves-light button edit-patient-save'%></div>
 <% end %>
-
 </div>
