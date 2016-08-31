@@ -1,14 +1,25 @@
-<h1 title="Edit Patient Information" class="text-center">Update Patient Information</h1>
-<p class="text-center">
-  To edit your Patient information, please update the form below. Press "Save Changes" to complete the update.
-</p>
-<div class="large-7 large-center columns">
-<%= simple_form_for @patient do |f| %>
-<%= f.input :date_of_birth %>
-<%= f.input :location %>
-<%= f.input :bio %>
-<%= f.submit "Save Changes", :class => 'waves-effect waves-light button edit-patient-save'%>
-<%= f.uploadcare_field :file %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 title="Edit Patient Information" class="text-center">Update Patient Information</h1>
+    <p class="text-center">
+      To edit your Patient information, please update the form below. Press "Save Changes" to complete the update.
+    </p>
+    <div class="large-7 large-center columns">
+      <a name="nav-skip" id="nav-skip"></a>
+      <%= simple_form_for @patient do |f| %>
+      <%= f.input :date_of_birth %>
+      <%= f.input :location %>
+      <%= f.input :bio %>
+      <%= f.submit "Save Changes", :class => 'waves-effect waves-light button edit-patient-save'%>
+      <%= f.uploadcare_field :file %>
+      <% end %>
 
-</div>
+    </div>
+    
+  </body>
+</html>

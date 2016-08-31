@@ -34,3 +34,12 @@
  .navtext  {
    color: #006ca8;
  }
+
+ .nav-skip {
+   position:absolute;
+   left:-10000px;
+   top:auto;
+   width:1px;
+   height:1px;
+   overflow:hidden;
+ }
