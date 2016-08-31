@@ -9,13 +9,21 @@
 
 puts "--seeds--"
 
-User.destroy_all
+if User.all.count > 0
+  User.destroy_all
+end
 
-Caregiver.destroy_all
+if Caregiver.all.count > 0
+  Caregiver.destroy_all
+end
 
-Specialty.destroy_all
+if Specialty.all.count > 0
+  Specialty.destroy_all
+end
 
-CaregiverSpecialty.destroy_all
+if CaregiverSpecialty.all.count > 0
+  CaregiverSpecialty.destroy_all
+end
 
 users_list = [
   {
