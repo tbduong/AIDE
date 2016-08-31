@@ -33,12 +33,14 @@
   <div class="splash text-center">
     <div class="row text-center">
       <div class="small-10 large-6 large-centered columns">
+        <% if !current_user %>
         <strong><h4>Get Started!</strong> Sign up for an account with us.</h4>
       </div>
     </div>
     <div class="row text-center">
       <div class="small-10 large-6 large-centered columns">
-        <%= button_to "Sign Up", new_user_path, :method => :get, class: "button large", title: "sign up button" %>
+          <%= button_to "Sign Up", new_user_path, :method => :get, class: "button large", title: "sign up button" %>
+        <% end %>
       </div>
     </div>
   </div>
