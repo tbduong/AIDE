@@ -6,7 +6,7 @@
         <% @specialties.each do |specialty| %>
         <li class="large-3 small-6 column">
             <div class="specialty-card padly">
-                <%= link_to "#{specialty.skill}", specialty_path(specialty) %>
+                <%= link_to "#{specialty.skill}", specialty_path(specialty), class: "links" %>
                 <% end %>
             </li>
         </ul>
@@ -49,7 +49,7 @@
                             <strong>Credentials:
                             </strong><%= caregiver.credentials %></h4>
                         <h4>Learn more about
-                            <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver) %></h4>
+                            <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver), class: "links" %></h4>
 
                     </div>
                 </div>
