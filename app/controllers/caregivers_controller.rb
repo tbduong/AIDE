@@ -13,9 +13,6 @@ class CaregiversController < ApplicationController
   end
 
   def index
-    # @caregivers = Caregiver.all
-    # render :index
-
     @q = Caregiver.ransack(params[:q])
     @caregivers = @q.result(distinct: true)
     @specialties = Specialty.all

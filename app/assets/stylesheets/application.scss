@@ -18,20 +18,27 @@
 
  .flash-message {
     background-color: #98FB98;
+    box-shadow: 0px 3px 3px rgba(0,0,0, .5);
  }
 
  .menu-text:hover {
    background-color: #FFFFFF;
  }
 
- .breadcrumbs {
-    position: 50%;
- }
-
- .bar {
-    background-color: #00008B;
-  }
-
- .navtext  {
+ .navtext:hover  {
    color: #006ca8;
  }
+
+ .sticky {
+  position: absolute;
+  z-index: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.sticky.is-stuck {
+  position: fixed;
+  z-index: 3;
+  box-shadow: 0 2px 3px rgba(0,0,0, .4);
+  top: 0;
+  width: 100%;
+}
