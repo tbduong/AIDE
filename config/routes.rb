@@ -22,9 +22,6 @@ Rails.application.routes.draw do
   get '/specialties', to: 'specialties#index', as: 'specialties'
   get '/specialties/:id/caregivers', to: 'specialties#show', as: 'specialty'
 
-  get '/caregiver_specialties', to: 'caregiver_specialties#index', as: 'caregiver_specialties'
-  get '/caregiver_specialties/:id', to: 'caregiver_specialties#show', as: 'caregiver_specialty'
-
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

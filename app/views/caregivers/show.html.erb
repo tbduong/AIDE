@@ -40,21 +40,15 @@
         <div class="panel callout radius">
             SPECIALTY:
             <hr>
-            <div class="row">
-                <div class="small-4 columns"></div>
-            </div>
+            <% @specialties.each do |specialty| %>
             <div class="row">
                 <div class="small-4 columns">
-                    SPECIALTY GOES HERE
-                </div>
-                <div class="small-4 columns">
-                    SPECIALTY GOES HERE
-                </div>
-                <div class="small-4 columns">
-                    SPECIALTY GOES HERE
+                    <%= link_to "#{specialty.skill}", specialty_path(specialty) %>
                 </div>
             </div>
+            <% end %>
         </div>
+
         <div class="large-12 large-centered columns">
             <%= link_to 'Send email', send_email_path, class: 'button expanded' %>
         </div>

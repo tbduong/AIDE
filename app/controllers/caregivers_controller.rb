@@ -1,6 +1,7 @@
 class CaregiversController < ApplicationController
   def show
     @caregiver = Caregiver.find_by_id(params[:id])
+    @specialties = Specialty.all
     if current_user.patient
       render :show
     else
@@ -17,6 +18,7 @@ class CaregiversController < ApplicationController
 
     @q = Caregiver.ransack(params[:q])
     @caregivers = @q.result(distinct: true)
+    @specialties = Specialty.all
   end
 
   def edit
