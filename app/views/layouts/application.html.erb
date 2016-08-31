@@ -22,7 +22,6 @@
         <% end %>
       </ul>
     </div>
-
     <div class="top-bar-right">
       <ul class="menu">
         <% if current_user %>
@@ -50,10 +49,28 @@
     </div>
   </div>
 </head>
+
 <body>
   <br>
 
   <%= yield %>
+
+  <div class="row">
+    <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
+      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
+      <% if current_user %>
+      <% if current_user.patient %>
+      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
+      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
+      <li role="menuitem"> <%= link_to "Caregivers Directory", caregivers_path%> </li>
+      <% else %>
+      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
+      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
+      <% end %>
+      <% end %>
+    </nav>
+  </div>
 
 </body>
 </html>
