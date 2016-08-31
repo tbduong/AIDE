@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   patch '/caregivers/:id', to: 'caregivers#update'
   get 'send_email/:id', to: 'caregivers#send_email', as: 'send_email'
 
+  get '/specialties', to: 'specialties#index', as: 'specialties'
+  get '/specialties/:id', to: 'specialties#show', as: 'specialty'
+
+  get '/caregiver_specialties', to: 'caregiver_specialties#index', as: 'caregiver_specialties'
+  get '/caregiver_specialties/:id', to: 'caregiver_specialties#show', as: 'caregiver_specialty'
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

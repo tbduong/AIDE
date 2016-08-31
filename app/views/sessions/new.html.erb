@@ -7,10 +7,12 @@
 <div class="form_for">
     <%= form_for @user, url: "/login", method: "post" do |f| %>
     <div>
-      <%= f.text_field :email, placeholder: "Email" %>
+      Email:
+      <%= f.text_field :email %>
     </div>
     <div>
-      <%= f.password_field :password, placeholder: "Password" %>
+      Password:
+      <%= f.password_field :password %>
     </div>
     <div>
       <%= f.submit "Log In", :class => 'waves-effect waves-light button login'%>

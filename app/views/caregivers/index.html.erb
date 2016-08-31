@@ -11,9 +11,11 @@
           <%= f.search_field :specialty_or_experience_or_location_or_credentials_cont  %>
           <%= f.submit class: "button expanded" %>
           <% end %>
+
     </div>
   </div>
 </div>
+
 
 <% @caregivers.each do |caregiver| %>
 <div class="row">
@@ -27,7 +29,8 @@
       <h4><strong>Location: </strong><%= caregiver.location %></h4>
       <h4><strong>Experience: </strong><%= caregiver.experience %></h4>
       <h4><strong>Credentials: </strong><%= caregiver.credentials %></h4>
-      <h4>Learn more about <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver) %><h4>
+      <h4>Learn more about <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver) %></h4>
+
     </div>
   </div>
 </div>
