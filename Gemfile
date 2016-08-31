@@ -37,6 +37,8 @@ gem "awesome_print", require:"ap"
 
 gem 'uploadcare-rails'
 
+gem 'friendly_id'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
