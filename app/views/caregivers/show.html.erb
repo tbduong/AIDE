@@ -18,6 +18,7 @@
                             <%= @caregiver.location %>
                         </ul>
                     </ul>
+                    <%= @caregiver.specialty %>
                 </div>
                 <a href="<%= edit_caregiver_path %>" class="button expanded">Edit Profile</a>
                 <a href="<%= edit_user_path(@caregiver.user_id) %>" class="button expanded">Edit User Information</a>
@@ -41,7 +42,7 @@
             <hr>
             <div class="row">
                 <div class="small-4 columns">
-                    SPECIALTY GOES HERE
+                  <%= @caregiver.specialty %>
                 </div>
                 <div class="small-4 columns">
                     SPECIALTY GOES HERE

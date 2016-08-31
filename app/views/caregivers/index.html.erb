@@ -15,9 +15,6 @@
   </div>
 </div>
 
-
-
-
 <% @caregivers.each do |caregiver| %>
 <div class="row">
   <div class="large-12 small-12 columns">
@@ -30,6 +27,7 @@
       <h4><strong>Location: </strong><%= caregiver.location %></h4>
       <h4><strong>Experience: </strong><%= caregiver.experience %></h4>
       <h4><strong>Credentials: </strong><%= caregiver.credentials %></h4>
+      <h4><strong>Specialities: </strong><%= caregiver.specialty %></h4>
       <h4>Learn more about <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver) %><h4>
     </div>
   </div>
