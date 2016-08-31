@@ -6,18 +6,22 @@ img {
   weight:150px;
 }
 
-.filter {
-  margin-left: 25%;
-}
-
-.filter-button {
-    margin-left: 42%;
-}
-
 .button {
-    background-color: #006ca8;
-    font-size: 19px;
-    padding: 20px;
+  background-color: #006ca8;
+  font-size: 19px;
+  padding: 20px;
+}
+
+.large-centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important;
+}
+
+.small-centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important;
 }
 
 .cg-form {
