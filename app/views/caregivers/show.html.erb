@@ -9,7 +9,8 @@
                 <%= image_tag(@caregiver.file) %>
               </div>
                 <div class="card-divider text-center">
-                    <h2><%= @caregiver.user.first_name %> <%= @caregiver.user.last_name %></h2>
+                    <h2><%= @caregiver.user.first_name %>
+                        <%= @caregiver.user.last_name %></h2>
                 </div>
                 <div class="card-section">
                     <ul>
@@ -34,31 +35,23 @@
             <%= @caregiver.experience %>
         </div>
         <div class="panel callout radius">
-          CREDENTIALS:
-          <hr>
-          <%= @caregiver.credentials %>
+            CREDENTIALS:
+            <hr>
+            <%= @caregiver.credentials %>
         </div>
         <div class="panel callout radius">
             SPECIALTY:
             <hr>
+            <% @specialties.each do |specialty| %>
             <div class="row">
                 <div class="small-4 columns">
-
+                    <%= link_to "#{specialty.skill}", specialty_path(specialty) %>
                 </div>
             </div>
-            <div class="row">
-                <div class="small-4 columns">
-                    SPECIALTY GOES HERE
-                </div>
-                <div class="small-4 columns">
-                    SPECIALTY GOES HERE
-                </div>
-                <div class="small-4 columns">
-                    SPECIALTY GOES HERE
-                </div>
-            </div>
+            <% end %>
         </div>
+
         <div class="large-12 large-centered columns">
-          <%= link_to 'Send email', send_email_path, class: 'button expanded' %>
+            <%= link_to 'Send email', send_email_path, class: 'button expanded' %>
         </div>
     </div>
