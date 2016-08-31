@@ -1,9 +1,11 @@
+
 <div style="height:15%; width:100%; clear:both;"></div>
 <h1 title="Edit Patient Information" class="text-center">Update Patient Information</h1>
 <p class="text-center">
   To edit your Patient information, please update the form below. Press "Save Changes" to complete the update.
 </p>
 <div class="large-7 large-centered columns">
+  <a name="nav-skip" id="nav-skip"></a>
 <%= simple_form_for @patient do |f| %>
 
 <%= f.input :date_of_birth, start_year: Date.today.year - 110, end_year: Date.today.year %>
