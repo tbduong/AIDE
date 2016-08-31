@@ -7,53 +7,56 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track', 'vendor/modernizr' => true %>
   <%= csrf_meta_tags %>
-<script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>  <script>
-      UPLOADCARE_PUBLIC_KEY = '9094615a416370e932a6';
+  <script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>  <script>
+  UPLOADCARE_PUBLIC_KEY = '9094615a416370e932a6';
   </script>
-</head>
-<body>
-  <div class="contain-to-grid">
-    <nav class="top-bar" aria-hidden="true" data-topbar role="navigation">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <a href="#nav-skip" class="nav-skip">Navbar Skip</a>
-        <li class="menu-text"> <%= link_to "[ A I D E ]", root_path, :class => "navtext" %></li>
-        <li> <%= link_to "About Us", about_path, :class => "navtext" %> </li>
-        <li><%= link_to "Resources", resources_path, :class => "navtext" %></li>
-        <% if current_user %>
-        <li> <%= link_to "Caregivers Directory", caregivers_path, :class => "navtext" %> </li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="top-bar-right">
-      <ul class="menu">
-        <% if current_user %>
-          <% if current_user.patient %>
-            <li> <%= link_to "Profile", patient_path(patient.id), :class => "navtext" %> </li>
-          <% else %>
-            <li> <%= link_to "Profile", caregiver_path(caregiver.id), :class => "navtext" %> </li>
-            <% end %>
-        <li> <%= link_to "Logout", logout_path, :class => "navtext" %> </li>
-        <% else %>
-        <li> <%= link_to "Login", login_path, :class => "navtext" %> </li>
-        <li> <%= link_to "Sign Up", new_user_path, :class => "navtext" %> </li>
-      </ul>
-      <% end %>
-    </div>
-  </nav>
 </div>
-
-<br>
-  <div class="row">
-    <div class="flash-message text-center">
-      <% flash.each do |type, m| %>
-      <%= m %>
-      <% end %>
+  <div id="data-sticky-container">
+    <div class="sticky is-stuck" id="data-stick-container">
+      <nav class="top-bar" aria-hidden="true" data-topbar role="navigation" id="example-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown menu menu" data-dropdown-menu>
+            <a href="#nav-skip" class="nav-skip">Navbar Skip</a>
+            <li class="menu-text"> <%= link_to "[ A I D E ]", root_path, :class => "navtext" %></li>
+            <li class="menu-text"> <%= link_to "About Us", about_path, :class => "navtext" %> </li>
+            <li class="menu-text"><%= link_to "Resources", resources_path, :class => "navtext" %></li>
+            <% if current_user %>
+            <li class="menu-text"> <%= link_to "Caregivers Directory", caregivers_path, :class => "navtext" %> </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <% if current_user %>
+            <% if current_user.patient %>
+            <li class="menu-text"> <%= link_to "Profile", patient_path(patient.id), :class => "navtext" %> </li>
+            <% else %>
+            <li class="menu-text"> <%= link_to "Profile", caregiver_path(caregiver.id), :class => "navtext" %> </li>
+            <% end %>
+            <li class="menu-text"> <%= link_to "Logout", logout_path, :class => "navtext" %> </li>
+            <% else %>
+            <li class="menu-text"> <%= link_to "Login", login_path, :class => "navtext" %> </li>
+            <li class="menu-text"> <%= link_to "Sign Up", new_user_path, :class => "navtext" %> </li>
+          </ul>
+          <% end %>
+        </div>
+      </nav>
     </div>
   </div>
-  <br>
+</head>
+<body>
+
 
   <%= yield %>
-
+  <div class="row">
+    <div class="large-centered small-centered columns .flash">
+      <div class="flash-message text-center" role="">
+        <% flash.each do |type, m| %>
+        <%= m %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
