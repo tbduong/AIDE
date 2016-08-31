@@ -1,6 +1,7 @@
 class CaregiversController < ApplicationController
   def show
     @caregiver = Caregiver.find_by_id(params[:id])
+    @specialties = Specialty.all
     if current_user.patient
       render :show
     else
@@ -17,6 +18,7 @@ class CaregiversController < ApplicationController
 
     @q = Caregiver.ransack(params[:q])
     @caregivers = @q.result(distinct: true)
+    @specialties = Specialty.all
   end
 
   def edit
@@ -28,7 +30,7 @@ class CaregiversController < ApplicationController
   end
 
   def update
-    caregiver_params = params.require(:caregiver).permit(:experience, :file, :location, :credentials, :specialty)
+    caregiver_params = params.require(:caregiver).permit(:experience, :file, :location, :credentials)
     @caregiver = Caregiver.find_by_id(params[:id])
     if @caregiver.update(caregiver_params)
       redirect_to caregiver_path(@caregiver)
