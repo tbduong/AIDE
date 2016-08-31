@@ -1,3 +1,4 @@
+
 <div style="height:100px; width:100%; clear:both;"></div>
 <h1 class="text-center">Caregiver Directory</h1>
 <div class="row text-center">
@@ -32,29 +33,17 @@
             <div class="large-3 small-12 columns">
               <%= image_tag(caregiver.file) %>
             </div>
-            <strong>
-              <h3>
-                <%= caregiver.user.first_name %><%= caregiver.user.last_name %>
-                <h3></strong>
-                  <h4>
-                    <strong>Email:
-                    </strong><%= caregiver.user.email %></h4>
-                    <h4>
-                      <strong>Location:
-                      </strong><%= caregiver.location %></h4>
-                      <h4>
-                        <strong>Experience:
-                        </strong><%= caregiver.experience %></h4>
-                        <h4>
-                          <strong>Credentials:
-                          </strong><%= caregiver.credentials %></h4>
-                          <h4>Learn more about
-                            <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver) %></h4>
+            <h3><strong><%= caregiver.user.first_name %><%= caregiver.user.last_name %></strong></h3>
+            <h4><strong>Email:</strong><%= caregiver.user.email %></h4>
+            <h4><strong>Location:</strong><%= caregiver.location %></h4>
+            <h4><strong>Experience:</strong><%= caregiver.experience %></h4>
+            <h4><strong>Credentials:</strong><%= caregiver.credentials %></h4>
+            <h4>Learn more about
+            <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver) %></h4>
 
-                          </div>
-                        </div>
-                      </div>
-                      <% end %>
-                      <br/>
-                    </div>
-                  </div>
+           </div>
+         </div>
+       </div>
+    <% end %>
+      <br/>
+    </div>
