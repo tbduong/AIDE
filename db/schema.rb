@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20160830213612) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "file"
-    t.string   "specialty"
     t.index ["user_id"], name: "index_caregivers_on_user_id", using: :btree
   end
 
