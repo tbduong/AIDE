@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830162200) do
+ActiveRecord::Schema.define(version: 20160830213612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "caregiver_specialties", force: :cascade do |t|
+    t.integer  "specialty_id"
+    t.integer  "caregiver_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["caregiver_id"], name: "index_caregiver_specialties_on_caregiver_id", using: :btree
+    t.index ["specialty_id"], name: "index_caregiver_specialties_on_specialty_id", using: :btree
+  end
 
   create_table "caregivers", force: :cascade do |t|
     t.text     "experience"
@@ -23,7 +32,6 @@ ActiveRecord::Schema.define(version: 20160830162200) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "file"
-    t.string   "specialty"
     t.index ["user_id"], name: "index_caregivers_on_user_id", using: :btree
   end
 
@@ -38,6 +46,12 @@ ActiveRecord::Schema.define(version: 20160830162200) do
     t.index ["user_id"], name: "index_patients_on_user_id", using: :btree
   end
 
+  create_table "specialties", force: :cascade do |t|
+    t.string   "skill"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -48,6 +62,8 @@ ActiveRecord::Schema.define(version: 20160830162200) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "caregiver_specialties", "caregivers"
+  add_foreign_key "caregiver_specialties", "specialties"
   add_foreign_key "caregivers", "users"
   add_foreign_key "patients", "users"
 end

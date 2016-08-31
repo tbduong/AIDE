@@ -1,7 +1,6 @@
 class CaregiversController < ApplicationController
   def show
     @caregiver = Caregiver.find_by_id(params[:id])
-
     if current_user.patient
       render :show
     else

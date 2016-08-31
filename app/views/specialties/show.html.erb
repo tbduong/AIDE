@@ -1,0 +1,13 @@
+<div class="row">
+  <%= @specialty.skill %>
+  <% @specialty.caregivers.each do |c| %>
+    <div class="caregiver card">
+      First Name: <%= c.user.first_name %>
+      <br>
+      Last Name: <%= c.user.last_name %>
+
+    </div>
+  <% end %>
+    <!-- specialties end -->
+
+</div>
