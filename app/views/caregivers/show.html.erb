@@ -1,5 +1,4 @@
-
-<div style="height:12%; width:100%; clear:both;"></div>
+<div style="height:10%; width:100%; clear:both;"></div>
 <h1 class="text-center">
   <%= @caregiver.user.first_name %>'s Profile
 </h1>
@@ -52,7 +51,9 @@
         <% end %>
       </div>
       <div class="large-12 large-centered columns">
-        <%= link_to 'Send email', send_email_path, class: 'button expanded' %>
+        <% if current_user.patient %>
+        <%= link_to 'Send email to this Caregiver' , send_email_path, class: 'button expanded' %>
+        <% end %>
       </div>
     </div>
   </div>
