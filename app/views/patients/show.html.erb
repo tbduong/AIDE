@@ -1,10 +1,12 @@
 <h2 class="text-center"> Welcome back, <%= @patient.user.first_name %> </h2>
 
 <div class="row">
-  <div class="small-4 columns">
+  <div class="large-4 small-12 columns">
     <div class="panel callout radius">
       <div class="card">
-        <%= image_tag(@patient.file) %>
+        <div class="picture text-center">
+          <%= image_tag(@patient.file) %>
+        </div>
         <div class="card-divider text-center">
           <h4><%= @patient.user.first_name %> <%= @patient.user.last_name %></h4>
         </div>
@@ -30,7 +32,7 @@
         <div>
         </div>
       </div>
-      <%= button_to "Find A Caregiver", caregivers_path, :method => :get, class: "button expanded" %>
+      <%= button_to "Find a Caregiver", caregivers_path, :method => :get, class: "button expanded" %>
 
     </div>
 
