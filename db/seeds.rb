@@ -9,21 +9,22 @@
 
 puts "--seeds--"
 
-# if User.all.count > 0
-#   User.destroy_all
-# end
-#
-# if Caregiver.all.count > 0
-#   Caregiver.destroy_all
-# end
-#
-# if Specialty.all.count > 0
-#   Specialty.destroy_all
-# end
-#
-# if CaregiverSpecialty.all.count > 0
-#   CaregiverSpecialty.destroy_all
-# end
+###dont push destroy_all to heroku
+if User.all.count > 0
+  User.destroy_all
+end
+
+if Caregiver.all.count > 0
+  Caregiver.destroy_all
+end
+
+if Specialty.all.count > 0
+  Specialty.destroy_all
+end
+
+if CaregiverSpecialty.all.count > 0
+  CaregiverSpecialty.destroy_all
+end
 
 users_list = [
   {
