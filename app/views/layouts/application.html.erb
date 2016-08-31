@@ -12,14 +12,15 @@
 
 
   <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle></button>
-  <div class="title-bar-title">Menu</div>
-</div>
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
   <div id="data-sticky-container">
     <div class="sticky is-stuck" id="data-stick-container">
       <nav class="top-bar" aria-hidden="true" data-topbar role="navigation" id="example-menu">
         <div class="top-bar-left">
           <ul class="dropdown menu menu" data-dropdown-menu>
+            <a href="#nav-skip" class="nav-skip">Navbar Skip</a>
             <li class="menu-text"> <%= link_to "[ A I D E ]", root_path, :class => "navtext" %></li>
             <li class="menu-text"> <%= link_to "About Us", about_path, :class => "navtext" %> </li>
             <li class="menu-text"><%= link_to "Resources", resources_path, :class => "navtext" %></li>
@@ -48,6 +49,8 @@
   </div>
 </head>
 <body>
+
+
   <%= yield %>
   <div class="row">
     <div class="large-centered small-centered columns .flash">
