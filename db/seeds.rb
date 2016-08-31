@@ -100,55 +100,55 @@ caregivers_list = [
   },
   {
     experience: "Everything's not great in life, but we can still find beauty in it. You have freedom here. The only guide is your heart. It's a good way of getting rid of all your anxieties and hostilities. Nothing wrong with washing your brush. ",
-    location: "Downtown San Francisco",
+    location: "Downtown San Mateo",
     credentials: "That's why I paint - because I can create the kind of world I want - and I can make this world as happy as I want it. You don't have to spend all your time thinking about what you're doing, you just let it happen.",
     user_id: 2
   },
   {
     experience: "Didn't you know you had that much power? You can move mountains. You can do anything. If what you're doing doesn't make you happy - you're doing the wrong thing. We're not trying to teach you a thing to copy. ",
-    location: "Downtown San Francisco",
+    location: "Downtown San Jose",
     credentials: "We're just here to teach you a technique, then let you loose into the world. Making all those little fluffies that live in the clouds. Here's something that's fun. If we're going to have animals around we all have to be concerned about them and take care of them.",
     user_id: 3
   },
   {
     experience: "I want everbody to be happy. That's what it's all about. This painting comes right out of your heart. And just raise cain.",
-    location: "Downtown San Francisco",
+    location: "San Diego",
     credentials: "Now we'll take the almighty fan brush. I started painting as a hobby when I was little. I didn't know I had any talent. I believe talent is just a pursued interest. Anybody can do what I do. If you hypnotize it, it will go away. We'll do another happy little painting. Put your feelings into it, your heart, it's your world. Paint anything you want on the canvas. Create your own world.",
     user_id: 4
   },
   {
     experience: "Everything's not great in life, but we can still find beauty in it. You have freedom here. The only guide is your heart. It's a good way of getting rid of all your anxieties and hostilities. Nothing wrong with washing your brush. ",
-    location: "Downtown San Francisco",
+    location: "San Francisco",
     credentials: "That's why I paint - because I can create the kind of world I want - and I can make this world as happy as I want it. You don't have to spend all your time thinking about what you're doing, you just let it happen.",
     user_id: 5
   },
   {
     experience: "Didn't you know you had that much power? You can move mountains. You can do anything. If what you're doing doesn't make you happy - you're doing the wrong thing. We're not trying to teach you a thing to copy. ",
-    location: "Downtown San Francisco",
+    location: "Burlingame",
     credentials: "We're just here to teach you a technique, then let you loose into the world. Making all those little fluffies that live in the clouds. Here's something that's fun. If we're going to have animals around we all have to be concerned about them and take care of them.",
     user_id: 6
   },
   {
     experience: "I want everbody to be happy. That's what it's all about. This painting comes right out of your heart. And just raise cain.",
-    location: "Downtown San Francisco",
+    location: "Daly City",
     credentials: "Now we'll take the almighty fan brush. I started painting as a hobby when I was little. I didn't know I had any talent. I believe talent is just a pursued interest. Anybody can do what I do. If you hypnotize it, it will go away. We'll do another happy little painting. Put your feelings into it, your heart, it's your world. Paint anything you want on the canvas. Create your own world.",
     user_id: 7
   },
   {
     experience: "Everything's not great in life, but we can still find beauty in it. You have freedom here. The only guide is your heart. It's a good way of getting rid of all your anxieties and hostilities. Nothing wrong with washing your brush. ",
-    location: "Downtown San Francisco",
+    location: "Burlingame",
     credentials: "That's why I paint - because I can create the kind of world I want - and I can make this world as happy as I want it. You don't have to spend all your time thinking about what you're doing, you just let it happen.",
     user_id: 8
   },
   {
     experience: "Didn't you know you had that much power? You can move mountains. You can do anything. If what you're doing doesn't make you happy - you're doing the wrong thing. We're not trying to teach you a thing to copy. ",
-    location: "Downtown San Francisco",
+    location: "Nob Hill, San Francisco",
     credentials: "We're just here to teach you a technique, then let you loose into the world. Making all those little fluffies that live in the clouds. Here's something that's fun. If we're going to have animals around we all have to be concerned about them and take care of them.",
     user_id: 9
   },
   {
     experience: "Didn't you know you had that much power? You can move mountains. You can do anything. If what you're doing doesn't make you happy - you're doing the wrong thing. We're not trying to teach you a thing to copy. ",
-    location: "Downtown San Francisco",
+    location: "Pac Heights, San Francisco",
     credentials: "We're just here to teach you a technique, then let you loose into the world. Making all those little fluffies that live in the clouds. Here's something that's fun. If we're going to have animals around we all have to be concerned about them and take care of them.",
     user_id: 10
   }
