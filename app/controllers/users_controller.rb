@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # UserMailer.welcome_email(@user).deliver
+      UserMailer.welcome_email(@user).deliver
       login(@user)
       if @user.patient
         @patient = Patient.create(user_id: @user.id)
@@ -38,8 +38,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by_id(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "Successfully saved changes to User information."
-      redirect_to '/'
+      if @user.patient
+        @patient = Patient.find_by_user_id(current_user[:id])
+        flash[:notice] = "Successfully saved changes to User information."
+        redirect_to patient_path(@patient.id)
+      else
+        @caregiver = Caregiver.find_by_user_id(current_user[:id])
+        flash[:notice] = "Successfully saved changes to User information."
+        redirect_to caregiver_path(@caregiver.id)
+      end
     else
       flash[:error] = "Could not save changes to User information. Please try again."
       redirect_to :back

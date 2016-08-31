@@ -1,18 +1,11 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-
+<div style="height:100px; width:100%; clear:both;"></div>
 <h1 class="text-center">Edit Caregiver Form</h1>
-
 <div class="row">
   <div class="small-12 large-12 large-center columns">
     <%= simple_form_for @caregiver do |f| %>
     <%= f.input :experience %>
     <%= f.input :location %>
     <%= f.input :credentials %>
-    <%= f.input :specialty %>
     <label for=":file">Upload your profile image:</label>
     <%= f.uploadcare_field :file %>
     <br>
