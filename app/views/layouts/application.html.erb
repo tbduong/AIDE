@@ -13,7 +13,6 @@
 
   <div id="data-sticky-container">
     <div class="sticky is-stuck" id="data-stick-container">
-      <div class="title-bar" data-responsive-toggle="menuBar" data-hide-for="medium">
         <nav class="top-bar" aria-hidden="true" data-topbar role="navigation">
           <div class="top-bar-left">
             <ul class="dropdown menu menu" data-dropdown-menu>
@@ -43,7 +42,6 @@
         </nav>
       </div>
     </div>
-  </div>
 </head>
 
 <body>
@@ -55,25 +53,7 @@
         <%= m %>
         <% end %>
       </div>
-
     </div>
-  </div>
-
-  <div class="row">
-    <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
-      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
-      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
-      <% if current_user %>
-      <% if current_user.patient %>
-      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
-      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
-      <li role="menuitem"> <%= link_to "Caregivers Directory", caregivers_path%> </li>
-      <% else %>
-      <li role="menuitem"> <%= link_to "About Us", about_path %> </li>
-      <li role="menuitem"> <%= link_to "Resources", resources_path %> </li>
-      <% end %>
-      <% end %>
-    </nav>
   </div>
 
 </body>
