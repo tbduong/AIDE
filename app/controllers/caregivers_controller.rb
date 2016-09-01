@@ -14,6 +14,7 @@ class CaregiversController < ApplicationController
   def index
     @q = Caregiver.ransack(params[:q])
     @caregivers = @q.result(distinct: true)
+    @specialties = Specialty.find_by_id(params[:id])
   end
 
   def edit
