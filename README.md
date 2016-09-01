@@ -23,7 +23,6 @@
 * Sass
 
 ### Ruby Gems Used:
-* Friendly_id
 * Ransack
 * Simple_form
 * Uploadcare
@@ -33,6 +32,9 @@
 * Calendar with a scheduling system
 * Caregiver rating system
 * Activation/deactivation of accounts
+* Password reset/recovery
+* Further responsiveness
+* CRUD specialities using join table
 
 ## Contributors:
 * Aaron Ray
