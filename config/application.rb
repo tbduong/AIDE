@@ -20,8 +20,6 @@ ENV.update YAML.load(File.read(File.expand_path('../super_secret.yml', __FILE__)
 
 module AIDE
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.exceptions_app = self.routes
   end
 end

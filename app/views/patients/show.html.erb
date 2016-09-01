@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <h1 class="text-center"> Welcome back, <%= @patient.user.first_name %> </h1>
 
+<<<<<<< HEAD
 <div style="height:15%; width:100%; clear:both;"></div>
 <h2 class="text-center"> Welcome, <%= @patient.user.first_name %>! </h2>
 
@@ -17,12 +26,27 @@
             <li> Birthdate: <%= @patient.date_of_birth %></li>
             <li> Location: <%= @patient.location %></li>
           </ul>
+=======
+  <div class="row">
+    <div class="small-4 columns">
+      <div class="panel callout radius">
+        <div class="card" role="patient profile">
+          <%= image_tag(@patient.file)  %>
+          <div class="card-divider text-center" role="patient name">
+            <p class="patient-name"><%= @patient.user.first_name %> <%= @patient.user.last_name %></p>
+          </div>
+          <div class="card-section" role="patient birth date and location">
+            <ul>
+              <li> Birthdate: <%= @patient.date_of_birth %></li>
+              <li> Location: <%= @patient.location %></li>
+            </ul>
+          </div>
+          <%= button_to "Edit Profile Information", edit_patient_path, :method => :get, class: "button expanded" %>
+          <%= button_to "Edit User Information", edit_user_path(@patient.user_id), :method => :get, class: "button expanded" %>
+>>>>>>> switt
         </div>
-        <%= button_to "Edit Profile Information", edit_patient_path, :method => :get, class: "button expanded" %>
-        <%= button_to "Edit User Information", edit_user_path(@patient.user_id), :method => :get, class: "button expanded" %>
       </div>
     </div>
-  </div>
 
     <div class="row">
       <div class="large-7 columns">
@@ -31,7 +55,14 @@
           <p>
             <%= @patient.bio %>
           </p>
+          <div>
+          </div>
         </div>
         <%= button_to "Find A Caregiver", caregivers_path, :method => :get, class: "button expanded" %>
+
       </div>
+
     </div>
+
+  </body>
+  </html>
