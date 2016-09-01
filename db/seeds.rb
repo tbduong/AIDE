@@ -206,11 +206,47 @@ caregiver_specialties_list = [
     caregiver_id: 1
   },
   {
-    specialty_id: 2,
+    specialty_id: 1,
     caregiver_id: 2
   },
   {
+    specialty_id: 1,
+    caregiver_id: 3
+  },
+  {
+    specialty_id: 1,
+    caregiver_id: 4
+  },
+  {
+    specialty_id: 2,
+    caregiver_id: 5
+  },
+  {
+    specialty_id: 2,
+    caregiver_id: 6
+  },
+  {
+    specialty_id: 2,
+    caregiver_id: 7
+  },
+  {
     specialty_id: 3,
+    caregiver_id: 8
+  },
+  {
+    specialty_id: 3,
+    caregiver_id: 9
+  },
+  {
+    specialty_id: 3,
+    caregiver_id: 1
+  },
+  {
+    specialty_id: 4,
+    caregiver_id: 2
+  },
+  {
+    specialty_id: 4,
     caregiver_id: 3
   },
   {
@@ -222,16 +258,48 @@ caregiver_specialties_list = [
     caregiver_id: 5
   },
   {
-    specialty_id: 6,
+    specialty_id: 5,
     caregiver_id: 6
   },
   {
-    specialty_id: 7,
+    specialty_id: 5,
     caregiver_id: 7
   },
   {
-    specialty_id: 8,
+    specialty_id: 6,
     caregiver_id: 8
+  },
+  {
+    specialty_id: 6,
+    caregiver_id: 9
+  },
+  {
+    specialty_id: 6,
+    caregiver_id: 1
+  },
+  {
+    specialty_id: 7,
+    caregiver_id: 2
+  },
+  {
+    specialty_id: 7,
+    caregiver_id: 3
+  },
+  {
+    specialty_id: 7,
+    caregiver_id: 4
+  },
+  {
+    specialty_id: 8,
+    caregiver_id: 5
+  },
+  {
+    specialty_id: 8,
+    caregiver_id: 6
+  },
+  {
+    specialty_id: 8,
+    caregiver_id: 7
   }
 ]
 
