@@ -1,6 +1,8 @@
 
 <div style="height:100px; width:100%; clear:both;"></div>
 <h1 class="text-center">Caregiver Directory</h1>
+<br>
+<p class="text-center">Select the category that you seek:</p>
 <div class="column">
     <ul class="specialty-grid no-bullet row">
         <% @specialties.each do |specialty| %>
@@ -15,11 +17,8 @@
         <div class="panel callout radius filter">
             <label>
                 <strong>
-                    <h2 class="text-center">Filter</h2>
+                    <h2 class="text-center"><strong>Search</strong> by location (i.e, San Francisco):</h2>
                 </strong>
-            </label>
-            <label for="q_experience_or_location_or_credentials_cont">
-                Search your specific care needs.
             </label>
             <%= search_form_for @q do |f| %>
             <%= f.search_field :experience_or_location_or_credentials_cont  %>
