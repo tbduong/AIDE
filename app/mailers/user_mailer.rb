@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
     @caregiver = caregiver
     @user = current_user
 
-    mail to: @caregiver.user.email, subject: 'This is a test'
+    mail to: @caregiver.user.email, subject: 'A patient would like to get in touch with you!'
   end
 
 
