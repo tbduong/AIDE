@@ -15,3 +15,8 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore uploadcare.yml
+
+super_secret.yml
+super_secret.yml

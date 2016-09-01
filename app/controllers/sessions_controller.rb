@@ -9,13 +9,9 @@ class SessionsController < ApplicationController
     if @user
       login(@user)
       if @user.patient
-        @patient = Patient.find_by_user_id(@user.id)
-        flash[:notice] = "Successfully logged in!"
-        redirect_to patient_path(@patient)
+        find_patient_and_redirect
       else
-        @caregiver = Caregiver.find_by_user_id(@user.id)
-        flash[:notice] = "Successfully logged in!"
-        redirect_to caregiver_path(@caregiver)
+        find_caregiver_and_redirect
       end
     else
       flash[:error] = "Incorrect email or password. Please try again"
@@ -25,7 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/login'
+    redirect_to '/'
     flash[:notice] = "Successfully logged out."
   end
 

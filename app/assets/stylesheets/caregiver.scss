@@ -6,10 +6,35 @@ img {
   weight:150px;
 }
 
-.filter {
-  margin-left: 25%;
+.button {
+  background-color: #006ca8;
+  font-size: 19px;
+  padding: 20px;
 }
 
-.filter-button {
-    margin-left: 42%;
+.large-centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important;
+}
+
+.small-centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important;
+}
+
+.specialty-grid {
+  .specialty-card {
+    width:220px;
+    margin:auto;
+    }
+}
+
+.cg-form {
+    margin-left: 25%;
+}
+
+.links {
+  color: #006ca8;
 }

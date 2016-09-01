@@ -3,52 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "AIDE" %></title>
   <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application", 'data-turbolinks-track', 'vendor/modernizr' => true %>
+  <%= javascript_include_tag 'application', 'vendor/modernizr' => true %>
   <%= csrf_meta_tags %>
+<script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
+<script>UPLOADCARE_PUBLIC_KEY = '9094615a416370e932a6';</script>
 
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text"> <%= link_to "[ A I D E ]", root_path %></li>
-        <li><a href="#">💙 About Us </a></li>
-        <li><a href="#">Resources</a></li>
-        <% if current_user %>
-        <li> <%= link_to "Caregivers Directory", caregivers_path %> </li>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="top-bar-right">
-      <ul class="menu">
-        <% if current_user %>
-          <% if current_user.patient %>
-            <li> <%= link_to "Profile", patient_path(patient.id) %> </li>
-          <% else %>
-            <li> <%= link_to "Profile", caregiver_path(caregiver.id) %> </li>
-            <% end %>
-        <li> <%= link_to "Logout", logout_path %> </li>
-        <% else %>
-        <li> <%= link_to "Login", login_path %> </li>
-        <li> <%= link_to "Sign Up", new_user_path %> </li>
-      </ul>
-    </div>
-    <% end %>
-  </div>
-<br>
-  <div class="row">
-    <div class="flash-message text-center">
-      <% flash.each do |type, m| %>
-      <%= m %>
-      <% end %>
-    </div>
+  <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
   </div>
 </head>
 <body>
-  <br>
+  <header>
+    <div id="data-sticky-container">
+      <div class="sticky is-stuck" id="data-stick-container">
+        <nav class="top-bar" aria-hidden="false" data-topbar role="navigation" id="example-menu">
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu>
+                <!-- <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> -->
+                <a href="#nav-skip" class="nav-skip">Navbar Skip</a>
+                <li class="menu-text navtext name"> <%= link_to "[ A I D E ]", root_path %>
+                </li>
+                <li class="menu-text"> <%= link_to "About Us", about_path, :class => "navtext" %> </li>
+                <li class="menu-text"><%= link_to "Resources", resources_path, :class => "navtext" %></li>
+                <% if current_user %>
+                <li class="menu-text"> <%= link_to "Caregivers Directory", caregivers_path, :class => "navtext" %> </li>
+                <% end %>
+              </ul>
+            </div>
 
+            <div class="top-bar-right">
+              <ul class="menu">
+                <% if current_user %>
+                <% if current_user.patient %>
+                <li class="menu-text"> <%= link_to "Profile", patient_path(patient.id), :class => "navtext" %> </li>
+                <% else %>
+                <li class="menu-text"> <%= link_to "Profile", caregiver_path(caregiver.id), :class => "navtext" %> </li>
+                <% end %>
+                <li class="menu-text"> <%= link_to "Logout", logout_path, :class => "navtext" %> </li>
+                <% else %>
+                <li class="menu-text"> <%= link_to "Login", login_path, :class => "navtext" %> </li>
+                <li class="menu-text"> <%= link_to "Sign Up", new_user_path, :class => "navtext" %> </li>
+                <% end %>
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </div>
+  </header>
   <%= yield %>
-
+  <div class="row">
+    <div class="large-centered small-centered columns .flash">
+      <div class="flash-message text-center" role="">
+        <% flash.each do |type, m| %>
+        <%= m %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>

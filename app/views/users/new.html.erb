@@ -1,8 +1,22 @@
-<%= simple_form_for @user do |f| %>
-<%= f.input :first_name %>
-<%= f.input :last_name %>
-<%= f.input :email %>
-<%= f.input :password %>
-<%= f.input :patient, as: :boolean %>
-<%= f.button :submit %>
-<% end %>
+
+<div style="height:15%; width:100%; clear:both;"></div>
+<h1 class="text-center"> Sign Up</h1>
+<p class="text-center">
+  Please fill in the form to create your account.
+</p>
+<div class="row">
+  <div class="large-6 large-centered columns">
+    <a name="nav-skip" id="nav-skip"></a>
+    <%= simple_form_for @user do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    If you are signing up as a <strong>patient</strong>, please check this box.
+    <br>
+    If you are a signing up as a <strong>caregiver</strong>, leave this box unchecked.
+    <%= f.input :patient, as: :boolean, class:"patient-box" %>
+    <%= f.submit "Sign Up", :class => 'waves-effect waves-light button signup'%>
+    <% end %>
+  </div>
+</div>

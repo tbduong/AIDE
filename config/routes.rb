@@ -17,11 +17,18 @@ Rails.application.routes.draw do
   get '/caregivers/:id', to: 'caregivers#show', as: 'caregiver'
   get '/caregivers/:id/edit', to: 'caregivers#edit', as: 'edit_caregiver'
   patch '/caregivers/:id', to: 'caregivers#update'
+  get 'send_email/:id', to: 'caregivers#send_email', as: 'send_email'
+
+  get '/specialties', to: 'specialties#index', as: 'specialties'
+  get '/specialties/:id/caregivers', to: 'specialties#show', as: 'specialty'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
   get '/resources', to: 'welcome#resources', as: 'resources'
+  get '/about', to: 'welcome#about', as: 'about'
+
+  get "*any", via: :all, to: "errors#not_found"
 
 end

@@ -1,7 +1,38 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .splash {
     margin-top: 2%;
+}
+
+.login {
+    margin-left: 40%
+}
+
+.large-centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important;
+}
+
+@media only screen and (max-width: 40em) { .splash-title { font-size: 80px; } }
+
+@media only screen and (min-width: 64.063em) { .splash-title { font-size: 120px; }
+}
+
+.splash-title {
+    letter-spacing: 0.3em;
+}
+
+.contrast {
+  color: #007cc0;
+}
+
+.links {
+  color: #006ca8;
+}
+
+.user-story {
+    box-shadow: 2px 3px 4px rgba(0,0,0,0.6);
+    background-color: #e6e6fa;
 }

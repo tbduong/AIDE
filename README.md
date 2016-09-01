@@ -1,24 +1,52 @@
-# README
+# AIDE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**AIDE** is an app inspired by the disconnect between patients and caregivers. The concept behind AIDE is a user-friendly platform that acts as a stepping stone for patients/guardians and caregivers to begin communication. Our end goal is to initialize connections hopefully leading to meaningful and long-lasting relationships.
+<p>
+<img src="http://i.imgur.com/c5e7j6e.jpg">  <img src="http://i.imgur.com/CSxeVEp.jpg">
+</p>
 
-Things you may want to cover:
+## Heroku
+<a href="https://aide-initiative.herokuapp.com/">The Aide Initiative</a>
 
-* Ruby version
+## ERD, Wireframes, and User Stories
 
-* System dependencies
+### ERD:
+<img src="http://i.imgur.com/gYv8KA0.png">
 
-* Configuration
+### Wireframes & User Stories:
+<img src="http://i.imgur.com/ceLLQNm.png">
 
-* Database creation
+## Technologies Used:
+* Ruby on Rails
+* PostgreSQL
+* Foundation
+* Sass
 
-* Database initialization
+### Ruby Gems Used:
+* Ransack
+* Simple_form
+* Uploadcare
 
-* How to run the test suite
+## Future Development:
+* Patients possess the ability to save favorite caregivers
+* Calendar with a scheduling system
+* Caregiver rating system
+* Activation/deactivation of accounts
+* Password reset/recovery
+* Further responsiveness
+* CRUD specialities using join table
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contributors:
+* Aaron Ray
+* Sophia Nakpil
+* Switt Srikulacheep
+* Tiffani Duong
+<br>
+<p align="center">Visit their <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" height="20px" width="20px">GitHub page:</p>
+<p align="center">
+        <a href="https://github.com/array415">Aaron Ray</a> |
+        <a href="https://github.com/sophn11">Sophia Nakpil</a> |
+        <a href="https://github.com/SwittS">Switt Srikulacheep</a> |
+        <a href="https://github.com/tbduong">Tiffani Duong</a>
+</p>
+<p align="center"><a href="https://aide-initiative.herokuapp.com/">&copy;The Aide Initiative</a></p>

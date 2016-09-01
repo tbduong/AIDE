@@ -1,21 +1,48 @@
-<strong><h1 class="splash-title text-center"> [ A I D E ] </h1></strong>
-<br>
-<strong><h3 class="text-center"> Find the care you seek. </h3></strong>
 
-<h6 class="text-center"> At AIDE, we aim to create new meaningful connections between patients and their caregivers.</h6>
-<br>
-<hr>
-<div class="splash text-center">
-<div class="row text-center">
-  <div class="large-6 large-centered columns">
-      <strong><h4>Get Started! Sign up for an account with us.</h4></strong>
-    <h5>Are you a <strong>patient</strong> or a <strong>caregiver</strong>?</h5>
-  </div>
+<div style="height:8%; width:100%; clear:both;"></div>
+<div class="large-centered small-12 columns">
+  <strong><h1 class="splash-title text-center">[AIDE]</h1></strong>
 </div>
-<div class="row text-center">
-  <div class="large-6 large-centered columns">
-    <a href="#" class="button success large"> Caregiver </a>
-    <a href="#" class="button large"> Patient </a>
-  </div>
+
+<div class="row large-10 small-12 small-centered">
+  <strong><h3 role="AIDE slogan" class="text-center"> Find the care you seek. </h3></strong>
 </div>
+
+<div class="row large-10 small-12 small-centered">
+  <h4 title="AIDE slogan"class="text-center"> At AIDE, we aim to create new meaningful connections between patients and their caregivers in the following simple steps: </h4>
+
+<div class="row">
+    <div class="large-12 small-12 columns user-story">
+    <div class="large-4 columns text-center">
+      <h5><strong> Sign Up for an Account: </strong></h5>
+      <p>
+        Sign up for an account with AIDE using your email as either a <strong>Patient</strong> or a <strong>Caregiver</strong>.
+      </p>
+    </div>
+    <div class="large-4 columns text-center">
+      <h5><strong> Find a Caregiver: </strong></h5>
+      <p>
+        Edit your profile page and begin searching for a caregiver right for you in using our Caregiver Directory. There you can search caregivers by your healthcare needs, or filter by location or credentials.
+      </p>
+    </div>
+    <div class="large-4 columns text-center">
+      <h5><strong> Contact your Caregiver: </strong></h5>
+      <p>
+        Once you find a potential caregiver for you or your loved one, AIDE will contact the caregiver on your behalf with a click of a button to notify them of your interest.
+      </div>
+    </div>
 </div>
+    <div class="splash text-center">
+      <div class="row text-center">
+        <div class="small-10 large-6 large-centered columns">
+          <% if !current_user %>
+          <strong><h4>Get Started!</strong> Sign up for an account with us.</h4>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="small-10 large-6 large-centered columns">
+          <%= button_to "Sign Up", new_user_path, :method => :get, class: "button large", title: "sign up button" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
