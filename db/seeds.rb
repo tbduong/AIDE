@@ -2,6 +2,7 @@
 puts "--seeds--"
 
 ###dont push destroy_all to heroku
+
 if User.all.count > 0
   User.destroy_all
 end
@@ -12,6 +13,10 @@ end
 
 if Specialty.all.count > 0
   Specialty.destroy_all
+end
+
+if Patient.all.count > 0
+  Patient.destroy_all
 end
 
 if CaregiverSpecialty.all.count > 0
@@ -88,6 +93,13 @@ users_list = [
     email: "dave@ross.com",
     password_digest: "$2a$10$EWbbXFGkZivl4UjEXXW4EO/ZAOsmqnV3Pqaq.AjoJvnh.7mPYVGJq",
     patient: false
+  },
+  {
+    first_name: "Patient",
+    last_name: "Ross McPasswordisPatient",
+    email: "patient@ross.com",
+    password_digest: "$2a$10$3GI41Vt.iczpWB.5my6dgejYgzkxxbKup2sSVryldZ.BVnYurwyda",
+    patient: true
   }
 ]
 
@@ -151,6 +163,14 @@ caregivers_list = [
     location: "Pac Heights, San Francisco",
     credentials: "We're just here to teach you a technique, then let you loose into the world. Making all those little fluffies that live in the clouds. Here's something that's fun. If we're going to have animals around we all have to be concerned about them and take care of them.",
     user_id: 10
+  }
+]
+
+patients_list = [
+  {
+    location: "Somewhere",
+    bio: "We're just here to teach you a technique, then let you loose into the world. Making all those little fluffies that live in the clouds. Here's something that's fun. If we're going to have animals around we all have to be concerned about them and take care of them.",
+    user_id: 11
   }
 ]
 
@@ -220,4 +240,5 @@ caregiver_specialties_list = [
 User.create(users_list)
 Caregiver.create(caregivers_list)
 Specialty.create(specialties_list)
+Patient.create(patients_list)
 CaregiverSpecialty.create(caregiver_specialties_list)
