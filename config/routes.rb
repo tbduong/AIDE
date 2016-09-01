@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'send_email/:id', to: 'caregivers#send_email', as: 'send_email'
 
   get '/specialties', to: 'specialties#index', as: 'specialties'
-  get '/specialties/:id/caregivers', to: 'specialties#show', as: 'specialty'
+  get '/specialties/:slug/caregivers', to: 'specialties#show', as: 'specialty'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
