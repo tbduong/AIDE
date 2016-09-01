@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= content_for?(:title) ? yield(:title) : "AIDE" %></title>
   <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag 'vendor/modernizr' => true %>
+  <%= javascript_include_tag 'application', 'vendor/modernizr' => true %>
   <%= csrf_meta_tags %>
-  <script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
-  <script>UPLOADCARE_PUBLIC_KEY = '9094615a416370e932a6';</script>
+<script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
+<script>UPLOADCARE_PUBLIC_KEY = '9094615a416370e932a6';</script>
+
+  <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
 </head>
 <body>
   <header>
@@ -58,7 +63,6 @@
       </div>
     </div>
   </div>
-<%= javascript_include_tag "application" %>
 </body>
 
 </html>
