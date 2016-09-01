@@ -1,17 +1,20 @@
 class PatientsController < ApplicationController
   def show
     @patient = Patient.find_by_id(params[:id])
-    if session[:user_id] != @patient[:user_id]
-      flash[:error] = "You are NOT authorized to view this profile."
-      redirect_to '/'
+    if logged_in?
+    elsif session[:user_id] != @patient[:user_id]
+          flash[:error] = "You are NOT authorized to view this profile."
+          redirect_to '/'
+
     end
   end
 
   def edit
     @patient = Patient.find_by_id(params[:id])
-    if session[:user_id] != @patient[:user_id]
-      flash[:error] = "You are NOT authorized to edit this profile."
-      redirect_to '/'
+    if logged_in?
+    elsif session[:user_id] != @patient[:user_id]
+          flash[:error] = "You are NOT authorized to edit this profile."
+          redirect_to '/'
     end
   end
 

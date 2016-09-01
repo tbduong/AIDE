@@ -5,10 +5,9 @@
         <div class="small-12 large-12 large-center columns">
           <a name="nav-skip" id="nav-skip"></a>
           <%= simple_form_for @caregiver do |f| %>
-          <%= f.input :experience %>
+          <%= f.input :experience, label: "Experience (Brief description of previous relevant work):" %>
           <%= f.input :location %>
-          <%= f.input :credentials %>
-          <%= f.input :specialties %>
+          <%= f.input :credentials, label: "Credentials (i.e., RN, RDN, RNA, LMT, PT, OTR/L, LPT):" %>
           <label for=":file">Upload your profile image:</label>
           <%= f.uploadcare_field :file %>
           <br>

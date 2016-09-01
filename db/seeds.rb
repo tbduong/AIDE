@@ -2,6 +2,7 @@
 puts "--seeds--"
 
 ###dont push destroy_all to heroku
+
 if User.all.count > 0
   User.destroy_all
 end

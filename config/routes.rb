@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   get '/resources', to: 'welcome#resources', as: 'resources'
   get '/about', to: 'welcome#about', as: 'about'
 
+  get "*any", via: :all, to: "errors#not_found"
+
 end

@@ -10,7 +10,7 @@
 
 <%= f.input :date_of_birth, start_year: Date.today.year - 110, end_year: Date.today.year %>
 <%= f.input :location %>
-<%= f.input :bio %>
+<%= f.input :bio, label: "Bio (Share your medical history and patient needs):" %>
 <label for=":file">Upload your profile image:</label>
 <%= f.uploadcare_field :file %>
 <br>

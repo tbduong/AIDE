@@ -1,14 +1,14 @@
 class CaregiversController < ApplicationController
   def show
     @caregiver = Caregiver.find_by_id(params[:id])
-    if current_user.patient
-      render :show
-    else
-      if session[:user_id] != @caregiver[:user_id]
+    @specialties = Specialty.all
+      if logged_in?
+      elsif current_user.patient
+        render :show
+      elsif session[:user_id] != @caregiver[:user_id]
         flash[:error] = "You are NOT authorized to view this profile."
         redirect_to '/'
       end
-    end
   end
 
   def index
@@ -18,7 +18,8 @@ class CaregiversController < ApplicationController
 
   def edit
     @caregiver = Caregiver.find_by_id(params[:id])
-    if session[:user_id] != @caregiver[:user_id]
+    if logged_in?
+    elsif session[:user_id] != @caregiver[:user_id]
       flash[:error] = "You are NOT authorized to edit this profile."
       redirect_to '/'
     end
@@ -37,6 +38,7 @@ class CaregiversController < ApplicationController
   def send_email
     caregiver = Caregiver.find_by_id(params[:id])
     UserMailer.caregiver_email(caregiver, current_user).deliver
-    redirect_to '/'
+    flash[:success] = "Thank you for your inquiry! An email has been sent to #{caregiver.user.first_name} #{caregiver.user.last_name}."
+    redirect_to patient_path(patient)
   end
 end

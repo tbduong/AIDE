@@ -1,5 +1,7 @@
 <div style="height:100px; width:100%; clear:both;"></div>
 <h1 class="text-center">Caregiver Directory</h1>
+<br>
+<p class="text-center">Select the category that you seek:</p>
 <div class="column">
 
 </div>
@@ -18,19 +20,50 @@
         <%= f.submit class: "button expanded" %>
         <% end %>
     </div>
-</div>
-<% @caregivers.each do |caregiver| %>
-<div class="row">
-  <div class="large-12 small-11 columns">
-    <div class="callout large">
-        <div class="large-3 small-12 text-center columns">
-            <%= image_tag(caregiver.file) %>
+    <div class="large-12 small-11 columns">
+        <div class="panel callout radius filter">
+            <label>
+                <strong>
+                    <h2 class="text-center"><strong>Search</strong> by location (i.e, San Francisco):</h2>
+                </strong>
+            </label>
+            <%= search_form_for @q do |f| %>
+            <%= f.search_field :experience_or_location_or_credentials_cont  %>
+            <%= f.submit class: "button expanded" %>
+            <% end %>
         </div>
       <strong><h3><%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver), class: "links" %><h3></strong>
       <h4><strong>Location:</strong><%= caregiver.location %></h4>
       <h4><strong>Experience:</strong><%= caregiver.experience %></h4>
       <h4><strong>Credentials:</strong><%= caregiver.credentials %></h4>
     </div>
-  </div>
-</div>
-<% end %>
+
+    <% @caregivers.each do |caregiver| %>
+    <div class="row">
+        <div class="large-12 small-11 columns">
+            <div class="callout large">
+                <div class="large-3 small-12 text-center columns">
+                    <%= image_tag(caregiver.file) %>
+                </div>
+                <strong>
+                    <h3>
+                        <%= caregiver.user.first_name %>
+                        <%= caregiver.user.last_name %>
+                        <h3></strong>
+                        <h4>
+                            <strong>Location:
+                            </strong><%= caregiver.location %></h4>
+                        <h4>
+                            <strong>Experience:
+                            </strong><%= caregiver.experience %></h4>
+                        <h4>
+                            <strong>Credentials:
+                            </strong><%= caregiver.credentials %></h4>
+                        <h4>Learn more about
+                            <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver), class: "links" %></h4>
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <% end %>
