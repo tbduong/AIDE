@@ -1,16 +1,17 @@
 <% @specialty.caregivers.each do |c| %>
-<div class="row" summary=""These are all the caregivers available for this specialty"">
+<div class="row" summary="These are all the caregivers available for this specialty">
     <div class="large-12 small-11 columns">
         <div class="callout large">
             <div class="large-3 small-12 text-center columns">
                 <%= image_tag(c.file) %>
             </div>
             <strong>
-              <div class="text-center">
-                <h3>
-                    <%= c.user.first_name %> <%= c.user.last_name %>
-                    <h3></strong>
-              </div>
+                <div class="text-center">
+                    <h3>
+                        <%= c.user.first_name %>
+                        <%= c.user.last_name %>
+                        <h3></strong>
+                    </div>
                     <h4>
                         <strong>Experience:
                         </strong><%= c.experience %></h4>
@@ -22,3 +23,4 @@
         </div>
         <% end %>
         <br/>
+        <strong><h5><%= link_to "All Specialties", specialties_path, class: "links" %><h5></strong>
