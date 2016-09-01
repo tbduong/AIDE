@@ -16,8 +16,6 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-ENV.update YAML.load(File.read(File.expand_path('../super_secret.yml', __FILE__)))
-
 module AIDE
   class Application < Rails::Application
     config.exceptions_app = self.routes
