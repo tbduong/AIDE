@@ -39,6 +39,7 @@ class CaregiversController < ApplicationController
   def send_email
     caregiver = Caregiver.find_by_id(params[:id])
     UserMailer.caregiver_email(caregiver, current_user).deliver
-    redirect_to '/'
+    flash[:success] = "Thank you for your inquiry! An email has been sent to #{caregiver.user.first_name} #{caregiver.user.last_name}."
+    redirect_to patient_path(patient)
   end
 end

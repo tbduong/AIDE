@@ -16,13 +16,9 @@ class UsersController < ApplicationController
         UserMailer.welcome_email(@user).deliver
         login(@user)
           if @user.patient
-            @patient = Patient.create(user_id: @user.id)
-            flash[:success] = 'Successfully created a patient account'
-            redirect_to patient_path(@patient.id)
+            create_patient
           else
-            flash[:success] = 'Successfully created a caregiver account'
-            @caregiver = Caregiver.create(user_id: @user.id)
-            redirect_to caregiver_path(@caregiver.id)
+            create_caregiver
           end
       else
         flash[:error] = @user.errors.full_messages.join(', ')
@@ -42,13 +38,9 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
       if @user.update(user_params)
         if @user.patient
-          @patient = Patient.find_by_user_id(current_user[:id])
-          flash[:notice] = 'Successfully saved changes to User information.'
-          redirect_to patient_path(@patient.id)
+          edit_patient
         else
-          @caregiver = Caregiver.find_by_user_id(current_user[:id])
-          flash[:notice] = 'Successfully saved changes to User information.'
-          redirect_to caregiver_path(@caregiver.id)
+          edit_caregiver
         end
       else
           flash[:error] = 'Could not save changes to User information. Please try again.'
