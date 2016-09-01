@@ -15,6 +15,10 @@ module SessionsHelper
     end
   end
 
+  def logout
+    @current_user = session[:user_id] = nil
+  end
+
   def patient
    Patient.find_by_user_id(current_user.id)
   end
@@ -22,9 +26,17 @@ module SessionsHelper
   def caregiver
    Caregiver.find_by_user_id(current_user.id)
   end
+  
+  def find_patient_and_redirect
+    @patient = Patient.find_by_user_id(@user.id)
+    flash[:notice] = "Successfully logged in!"
+    redirect_to patient_path(@patient)
+  end
 
-  def logout
-    @current_user = session[:user_id] = nil
+  def find_caregiver_and_redirect
+    @caregiver = Caregiver.find_by_user_id(@user.id)
+    flash[:notice] = "Successfully logged in!"
+    redirect_to caregiver_path(@caregiver)
   end
 
 end
