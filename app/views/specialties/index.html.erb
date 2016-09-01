@@ -1,5 +1,5 @@
 <div style="height:100px; width:100%; clear:both;"></div>
-<h1 class="text-center">Caregiver Directory</h1>
+<h1 class="text-center">Specialties Directory</h1>
 <br>
 <hr>
 <div class="column">
@@ -15,22 +15,7 @@
       <% end %>
   </ul>
 </div>
-<div class="large-12 small-11 columns">
-    <div class="panel callout radius filter">
-        <label>
-            <strong>
-                <h2 class="text-center">Filter</h2>
-            </strong>
-        </label>
-        <label for="q_experience_or_location_or_credentials_cont">
-            Search by caregiver information.
-        </label>
-        <%= search_form_for @q do |f| %>
-        <%= f.search_field :experience_or_location_or_credentials_cont  %>
-        <%= f.submit class: "button expanded" %>
-        <% end %>
-    </div>
-</div>
+
 <% @caregivers.each do |caregiver| %>
 <div class="row">
   <div class="large-12 small-11 columns">

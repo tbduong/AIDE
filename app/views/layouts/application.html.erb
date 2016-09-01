@@ -29,7 +29,8 @@
                 <li class="menu-text"> <%= link_to "About Us", about_path, :class => "navtext" %> </li>
                 <li class="menu-text"><%= link_to "Resources", resources_path, :class => "navtext" %></li>
                 <% if current_user %>
-                <li class="menu-text"> <%= link_to "Caregivers Directory", specialties_path, :class => "navtext" %> </li>
+                <li class="menu-text"> <%= link_to "Specialties Directory", specialties_path, :class => "navtext" %> </li>
+                <li class="menu-text"> <%= link_to "Caregivers Directory", caregivers_path, :class => "navtext" %> </li>
                 <% end %>
               </ul>
             </div>

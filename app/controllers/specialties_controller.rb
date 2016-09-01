@@ -2,7 +2,7 @@ class SpecialtiesController < ApplicationController
   def index
     @specialties = Specialty.all
     @q = Caregiver.ransack(params[:q])
-    @caregivers = @q.result(distinct: true)
+    @caregivers = Caregiver.all
     @specialty = Specialty.find_by(params[:id])
   end
 
