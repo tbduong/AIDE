@@ -1,57 +1,36 @@
-
 <div style="height:100px; width:100%; clear:both;"></div>
 <h1 class="text-center">Caregiver Directory</h1>
 <div class="column">
-    <ul class="specialty-grid no-bullet row">
-        <% @specialties.each do |specialty| %>
-        <li class="large-3 small-6 column">
-            <div class="specialty-card padly">
-                <%= link_to "#{specialty.skill}", specialty_path(specialty), class: "links" %>
-                <% end %>
-            </li>
-        </ul>
-    </div>
-    <div class="large-12 small-11 columns">
-        <div class="panel callout radius filter">
-            <label>
-                <strong>
-                    <h2 class="text-center">Filter</h2>
-                </strong>
-            </label>
-            <label for="q_experience_or_location_or_credentials_cont">
-                Search your specific care needs.
-            </label>
-            <%= search_form_for @q do |f| %>
-            <%= f.search_field :experience_or_location_or_credentials_cont  %>
-            <%= f.submit class: "button expanded" %>
-            <% end %>
-        </div>
-    </div>
-    <% @caregivers.each do |caregiver| %>
-    <div class="row">
-        <div class="large-12 small-11 columns">
-            <div class="callout large">
-                <div class="large-3 small-12 text-center columns">
-                    <%= image_tag(caregiver.file) %>
-                </div>
-                <strong>
-                    <h3>
-                        <%= caregiver.user.first_name %>
-                        <%= caregiver.user.last_name %>
-                        <h3></strong>
-                        <h4>
-                            <strong>Location:
-                            </strong><%= caregiver.location %></h4>
-                        <h4>
-                            <strong>Experience:
-                            </strong><%= caregiver.experience %></h4>
-                        <h4>
-                            <strong>Credentials:
-                            </strong><%= caregiver.credentials %></h4>
-                        <h4>Learn more about
-                            <%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver), class: "links" %></h4>
 
-                    </div>
-                </div>
-            </div>
-            <% end %>
+</div>
+<div class="large-12 small-11 columns">
+    <div class="panel callout radius filter">
+        <label>
+            <strong>
+                <h2 class="text-center">Filter</h2>
+            </strong>
+        </label>
+        <label for="q_experience_or_location_or_credentials_cont">
+            Search by caregiver information.
+        </label>
+        <%= search_form_for @q do |f| %>
+        <%= f.search_field :experience_or_location_or_credentials_cont  %>
+        <%= f.submit class: "button expanded" %>
+        <% end %>
+    </div>
+</div>
+<% @caregivers.each do |caregiver| %>
+<div class="row">
+  <div class="large-12 small-11 columns">
+    <div class="callout large">
+        <div class="large-3 small-12 text-center columns">
+            <%= image_tag(caregiver.file) %>
+        </div>
+      <strong><h3><%= link_to "#{caregiver.user.first_name} #{caregiver.user.last_name}", caregiver_path(caregiver), class: "links" %><h3></strong>
+      <h4><strong>Location:</strong><%= caregiver.location %></h4>
+      <h4><strong>Experience:</strong><%= caregiver.experience %></h4>
+      <h4><strong>Credentials:</strong><%= caregiver.credentials %></h4>
+    </div>
+  </div>
+</div>
+<% end %>

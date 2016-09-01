@@ -42,7 +42,7 @@
       <div class="panel callout radius">
         SPECIALTY:
         <hr>
-        <% @specialties.each do |specialty| %>
+        <% @caregiver.specialties.each do |specialty| %>
         <div class="row">
           <div class="small-4 columns">
             <%= link_to "#{specialty.skill}", specialty_path(specialty), class: "links" %>

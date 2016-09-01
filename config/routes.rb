@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   get '/caregivers/:id', to: 'caregivers#show', as: 'caregiver'
   get '/caregivers/:id/edit', to: 'caregivers#edit', as: 'edit_caregiver'
   patch '/caregivers/:id', to: 'caregivers#update'
-  get 'send_email/:id', to: 'caregivers#send_email', as: 'send_email'
+  get '/send_email/:id', to: 'caregivers#send_email', as: 'send_email'
 
   get '/specialties', to: 'specialties#index', as: 'specialties'
-  get '/specialties/:slug/caregivers', to: 'specialties#show', as: 'specialty'
+  get '/specialties/:id', to: 'specialties#show', as: 'specialty'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
