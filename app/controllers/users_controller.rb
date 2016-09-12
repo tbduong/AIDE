@@ -54,3 +54,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :email, :password, :patient)
   end
 end
+
+# TODO:  Indent two spaces for 'user_params' method after private designation

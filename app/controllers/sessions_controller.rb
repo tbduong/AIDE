@@ -32,3 +32,5 @@ class SessionsController < ApplicationController
   end
 
 end
+# TODO: All flash messages need single quotes
+# Remove excessive line on 33.

@@ -7,3 +7,5 @@ class ErrorsController < ApplicationController
    render status: 404, text: "nope"
   end
 end
+
+# TODO: single quotes on "nope", fix indentation on rescue
