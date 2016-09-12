@@ -7,3 +7,5 @@ class WelcomeController < ApplicationController
   end
 
 end
+
+# TODO: What's happening here??

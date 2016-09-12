@@ -44,6 +44,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.wrapper :container_wrapper, tag: 'div', class: 'small-offset-3 small-9 columns' do |ba|
+      # TODO: use Ruby 1.9 hash syntax for line 48
       ba.wrapper :tag => 'label', :class => 'checkbox' do |bb|
         bb.use :input
         bb.use :label_text

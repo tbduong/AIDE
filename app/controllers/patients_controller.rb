@@ -28,3 +28,6 @@ class PatientsController < ApplicationController
     end
   end
 end
+
+# TODO: create a private method for patients_params
+# TODO: Single quotes on flash error (line 6 and 16)

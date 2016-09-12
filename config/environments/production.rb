@@ -47,6 +47,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
+  # TODO: no space between square brackets [:request_id]
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
@@ -85,7 +86,7 @@ config.action_mailer.smtp_settings = {
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
-
+  # TODO: single quotes for line 90
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter

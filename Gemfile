@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+# TODO:  take out excessive space (lines 2/3)
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -25,14 +25,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-
+# TODO: use single quotes when possible/rails preference (line 29)
 gem "autoprefixer-rails"
 gem 'foundation-rails'
 
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'ransack'
-
+# TODO: Use single quotes/place a space after the colon (line 36)
 gem "awesome_print", require:"ap"
 
 gem 'uploadcare-rails'
@@ -44,11 +44,13 @@ gem 'rubocop', require: false
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # TODO: Line 48 is more characters than needed.  Minimize comment
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug', platform: :mri
 end
 
 group :development do
+  # TODO: Lines 54 and 57 are too long.  Minimize comments to 80 characters.
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'

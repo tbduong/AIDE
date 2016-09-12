@@ -10,7 +10,9 @@ module SessionsHelper
   end
 
   def logged_in?
+    # TODO: you can use 'if current_user nil?' instead
     if current_user == nil
+    # TODO: don't use parenthesis around a literal
       redirect_to ('/')
     end
   end
@@ -20,13 +22,15 @@ module SessionsHelper
   end
 
   def patient
+   # TODO: use two spaces for indentation
    Patient.find_by_user_id(current_user.id)
   end
 
   def caregiver
+   # TODO: use two spaces for indentation
    Caregiver.find_by_user_id(current_user.id)
   end
-  
+
   def find_patient_and_redirect
     @patient = Patient.find_by_user_id(@user.id)
     flash[:notice] = "Successfully logged in!"
@@ -40,3 +44,6 @@ module SessionsHelper
   end
 
 end
+# TODO: remove empty line 2
+# TODO: single quotes on flash messages
+# TODO: remove empty line 45

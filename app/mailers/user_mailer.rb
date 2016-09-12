@@ -20,3 +20,5 @@ class UserMailer < ApplicationMailer
 
 
 end
+
+# TODO: remove empty lines 20 and 21

@@ -6,3 +6,7 @@ module ApplicationHelper
     p super(img, options)
   end
 end
+
+# TODO: does 'path' do anything?  If not you should remove it.
+# TODO: remove extra space from line 2
+# TODO: single quotes on line 5
