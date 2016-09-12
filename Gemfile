@@ -38,6 +38,7 @@ gem "awesome_print", require:"ap"
 gem 'uploadcare-rails'
 
 gem 'friendly_id'
+gem 'rubocop', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
